@@ -1,24 +1,22 @@
-const usuario=(sequelize,type)=>{
-    return sequelize.define('usuarios',{
-        id_usuario:{
+const subClasificacion=(sequelize,type)=>{
+    return sequelize.define('subClasificaciones',{
+        id_subclasificacion:{
             type:  type.INTEGER,
             primaryKey:true,
             autoIncrement:true
         },
-        nombreUsuario:type.STRING(99),
-        apellidoUsuario:type.STRING(99),
-        correoUsuario:type.STRING(99),
-        apodoUsuario:type.STRING(99),
-        contraseña: type.STRING(10),
-        
+        id_subclasificacion:type.STRING(99),
+        nombre:type.STRING(99),
+        detalle:type.STRING(99),
+        correoid_clasificacion:type.STRING(99),
 
 
-        creacionUsuario: {
+        creacionsubclasificacion: {
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull: false
         },
-        actualizarUsuario: {
+        actualizarsubclasificacion: {
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull: false
@@ -28,4 +26,4 @@ const usuario=(sequelize,type)=>{
     })
 }
 
-module.exports = usuario;
+module.exports=subClasificacion

@@ -1,24 +1,21 @@
-const usuario=(sequelize,type)=>{
-    return sequelize.define('usuarios',{
-        id_usuario:{
+const respuestaComentario=(sequelize,type)=>{
+    return sequelize.define('respuestaComentarios',{
+        id_respuestaComentario:{
             type:  type.INTEGER,
             primaryKey:true,
             autoIncrement:true
         },
-        nombreUsuario:type.STRING(99),
-        apellidoUsuario:type.STRING(99),
-        correoUsuario:type.STRING(99),
-        apodoUsuario:type.STRING(99),
-        contraseña: type.STRING(10),
-        
+        id_detalle:type.STRING(99),
+        respuesta:type.STRING(99),
+        id_comentario:type.STRING(99),
 
 
-        creacionUsuario: {
+        creacionrespuestaComentario: {
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull: false
         },
-        actualizarUsuario: {
+        actualizarrespuestaComentario: {
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull: false
@@ -28,4 +25,4 @@ const usuario=(sequelize,type)=>{
     })
 }
 
-module.exports = usuario;
+module.exports=respuestaComentario
