@@ -68,14 +68,8 @@ passport.use(
         newClient.phoneClient = await helpers.encryptPassword(phoneClient);
         newClient.passportClient = await helpers.encryptPassword(password);
 
-        let newDetail = {
-          clientIdClient: idUsuarios,
-          generIdGener: nameGener,
-          typePersonIdTypePerson: nameTypePerson
-        }
-
         const resultado = await orm.client.create(newClient);
-        await orm.clientDetail.create(newDetail)
+
 
         newClient.id = resultado.insertId;
 
