@@ -16,14 +16,14 @@ passport.use(
       passwordField: "password",
       passReqToCallback: true
     },
-    async (req, username, password, done) => {
-      const rows = await orm.client.findOne({ where: { usernameClient: username } });
+    async (req,username,password, done) => {
+      const rows = await orm.usuario.findOne({ where: {apodoUsuario: username } });
       if (rows) {
-        const user = rows;
-        const contraseña = await CryptoJS.AES.decrypt(user.passportClient, 'secret');
+        const usuario = rows;
+        const contraseña = await CryptoJS.AES.decrypt(usuario.contraseña, 'secret');
         const validPassword = contraseña.toString(CryptoJS.enc.Utf8);
         if (validPassword == password) {
-          done(null, user, req.flash("message", "Bienvenido" + " " + user.usernameClient));
+          done(null, usuario, req.flash("message", "Bienvenido" + " " + usuario.apodoUsuario));
         } else {
           done(null, false, req.flash("message", "Datos incorrecta"));
         }
@@ -46,117 +46,51 @@ passport.use(
       passwordField: "password",
       passReqToCallback: true
     },
-    async (req, username, password, done) => {
-      const usuarios = await orm.client.findOne({ where: { usernameClient: username } });
-      if (usuarios === null) {
-        const { idUsuarios, nameClient, lastNameClient, identificationCardClient, passportClient, emailClient, phoneClient, nameTypePerson, nameGener } = req.body
-        let newClient = {
-          nameClient,
-          lastNameClient,
-          identificationCardClient,
-          passportClient,
-          emailClient,
-          phoneClient,
-          usernameClient: username,
-          passwordClient: password
+    async (req,username,password, done) => {
+      const usuario = await orm.usuario.findOne({ where: {apodoUsuario:username } });
+      if (usuario === null) {
+        const {  nombreUsuario,apellidoUsuario,correoUsuario,contraseña} = req.body
+        let creacionUsuario = {
+           nombreUsuario,
+           apellidoUsuario, 
+           correoUsuario,
+           apodoUsuario:username,
+           contraseña:password
+           
         };
-        newClient.nameClient = await helpers.encryptPassword(nameClient);
-        newClient.lastNameClient = await helpers.encryptPassword(lastNameClient);
-        newClient.identificationCardClient = await helpers.encryptPassword(identificationCardClient);
-        newClient.passportClient = await helpers.encryptPassword(passportClient);
-        newClient.emailClient = await helpers.encryptPassword(emailClient);
-        newClient.phoneClient = await helpers.encryptPassword(phoneClient);
-        newClient.passportClient = await helpers.encryptPassword(password);
+        creacionUsuario.nombreUsuario = await helpers.encryptPassword(nombreUsuario);
+        creacionUsuario.apellidoUsuario = await helpers.encryptPassword(apellidoUsuario);
+        creacionUsuario.correoUsuario = await helpers.encryptPassword(correoUsuario);
+        creacionUsuario.contraseña = await helpers.encryptPassword(contraseña);
 
-        const resultado = await orm.client.create(newClient);
+        const resultado = await orm.usuario.create(creacionUsuario);
+        creacionUsuario.id = resultado.insertId;
 
-
-        newClient.id = resultado.insertId;
-
-        const imagenUsuario = req.files.imagenUsuario
-        const validacion = path.extname(imagenUsuario.name)
-
-        const extencion = [".PNG", ".JPG", ".JPEG", ".GIF", ".TIF", ".png", ".jpg", ".jpeg", ".gif", ".tif"];
-
-        if (!extencion.includes(validacion)) {
-          req.flash("success", "Imagen no compatible.")
-        }
-
-        if (!req.files) {
-          req.flash("success", "Imagen no insertada.")
-        }
-
-        const ubicacion = __dirname + "/../public/img/user/" + imagenUsuario.name;
-
-        imagenUsuario.mv(ubicacion, function (err) {
-          if (err) {
-            return req.flash("message", err)
-          }
-          sql.query("UPDATE clients SET imagesClient = ? WHERE idClient = ?", [imagenUsuario.name, idUsuarios])
-          console.log("Imagen de usuario ingresada")
-        })
-
-        return done(null, newClient);
+        return done(null, creacionUsuario);
       } else {
-        if (usuarios) {
-          const usuario = usuarios
-          if (username == usuario.username) {
+        if (usuario) {
+          const usuarios = usuario
+          if (usuarios.apellidoUsuario == username) {
             done(null, false, req.flash("message", "El nombre de usuario ya existe."))
           } else {
-            const { idUsuarios, nameClient, lastNameClient, identificationCardClient, passportClient, emailClient, phoneClient, nameTypePerson, nameGener } = req.body
-            let newClient = {
-              nameClient,
-              lastNameClient,
-              identificationCardClient,
-              passportClient,
-              emailClient,
-              phoneClient,
-              usernameClient: username,
-              passwordClient: password
+            const {  nombreUsuario,apellidoUsuario,correoUsuario,contraseña} = req.body
+            let creacionUsuario = {
+               nombreUsuario,
+               apellidoUsuario, 
+               correoUsuario,
+               apodoUsuario:username,
+               contraseña:password
+               
             };
-            newClient.nameClient = await helpers.encryptPassword(nameClient);
-            newClient.lastNameClient = await helpers.encryptPassword(lastNameClient);
-            newClient.identificationCardClient = await helpers.encryptPassword(identificationCardClient);
-            newClient.passportClient = await helpers.encryptPassword(passportClient);
-            newClient.emailClient = await helpers.encryptPassword(emailClient);
-            newClient.phoneClient = await helpers.encryptPassword(phoneClient);
-            newClient.passportClient = await helpers.encryptPassword(password);
-
-            let newDetail = {
-              clientIdClient: idUsuarios,
-              generIdGener: nameGener,
-              typePersonIdTypePerson: nameTypePerson
-            }
-
-            const resultado = await orm.client.create(newClient);
-            await orm.clientDetail.create(newDetail)
-
-            newClient.id = resultado.insertId;
-
-            const imagenUsuario = req.files.imagenUsuario
-            const validacion = path.extname(imagenUsuario.name)
-
-            const extencion = [".PNG", ".JPG", ".JPEG", ".GIF", ".TIF", ".png", ".jpg", ".jpeg", ".gif", ".tif"];
-
-            if (!extencion.includes(validacion)) {
-              req.flash("success", "Imagen no compatible.")
-            }
-
-            if (!req.files) {
-              req.flash("success", "Imagen no insertada.")
-            }
-
-            const ubicacion = __dirname + "/../public/img/user/" + imagenUsuario.name;
-
-            imagenUsuario.mv(ubicacion, function (err) {
-              if (err) {
-                return req.flash("message", err)
-              }
-              sql.query("UPDATE clients SET imagesClient = ? WHERE idClient = ?", [imagenUsuario.name, idUsuarios])
-              console.log("Imagen de usuario ingresada")
-            })
-
-            return done(null, newClient);
+            creacionUsuario.nombreUsuario = await helpers.encryptPassword(nombreUsuario);
+            creacionUsuario.apellidoUsuario = await helpers.encryptPassword(apellidoUsuario);
+            creacionUsuario.correoUsuario = await helpers.encryptPassword(correoUsuario);
+            creacionUsuario.contraseña = await helpers.encryptPassword(contraseña);
+    
+            const resultado = await orm.usuario.create(creacionUsuario);
+            creacionUsuario.id = resultado.insertId;
+    
+            return done(null, creacionUsuario);
           }
         }
       }

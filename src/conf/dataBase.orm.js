@@ -86,7 +86,7 @@ usuario.hasMany(paginaPrincipal);
 paginaPrincipal.belongsTo(usuario);
 paginaPrincipal.hasMany(objetivo);
 objetivo.belongsTo(paginaPrincipal);
-usuario.belongsTo(clasificacion);
+usuario.hasMany(clasificacion);
 clasificacion.belongsTo(usuario);
 usuario.hasMany(actividad);
 actividad.belongsTo(usuario);

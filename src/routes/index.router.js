@@ -1,9 +1,9 @@
 
 const express = require('express');
+const { show } = require('../controllers/index.controllers');
 const router = express.Router();
 
-router.get('/', async (req, res) => {
-    res.render('index');
-});
+router.get('/',show)
+
 
 module.exports = router;
