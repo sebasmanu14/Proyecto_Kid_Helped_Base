@@ -31,7 +31,6 @@ const tipoClienteModels = require("../models/tipoCliente");
 const usuarioModels = require("../models/usuario");
 const videoModels = require("../models/video");
 
-
 //Conexion
 const sequelize = new Sequelize("kidhelped", "root", "", {
   host: "localhost",
@@ -62,7 +61,7 @@ const capacitacion = capacitacionModels(sequelize, Sequelize);
 const clasificacion = clasificacionModels(sequelize, Sequelize);
 const cliente = clienteModels(sequelize, Sequelize);
 const comentario = comentarioModels(sequelize, Sequelize);
-const objetivo = objetivoModels(sequelize, Sequelize); 
+const objetivo = objetivoModels(sequelize, Sequelize);
 const paginaPrincipal = paginaPrincipalModels(sequelize, Sequelize);
 const puntacion = puntacionModels(sequelize, Sequelize);
 const respuestaComentario = respuestaComentarioModels(sequelize, Sequelize);
@@ -72,12 +71,45 @@ const tipoCliente = tipoClienteModels(sequelize, Sequelize);
 const usuario = usuarioModels(sequelize, Sequelize);
 const video = videoModels(sequelize, Sequelize);
 
-
 //relaciones
-cliente.hasMany(tipoCliente)
-tipoCliente.belongsTo(cliente)
-capacitacion.hasMany(tipoCapacitacion)
-tipoCapacitacion.belongsTo(capacitacion)
+cliente.hasMany(tipoCliente);
+tipoCliente.belongsTo(cliente);
+tipoCapacitacion.hasMany(capacitacion);
+capacitacion.belongsTo(tipoCapacitacion);
+comentario.hasMany(respuestaComentario);
+respuestaComentario.belongsTo(comentario);
+cliente.hasMany(comentario);
+comentario.belongsTo(cliente);
+cliente.hasMany(puntacion);
+puntacion.belongsTo(cliente);
+usuario.hasMany(paginaPrincipal);
+paginaPrincipal.belongsTo(usuario);
+paginaPrincipal.hasMany(objetivo);
+objetivo.belongsTo(paginaPrincipal);
+usuario.belongsTo(clasificacion);
+clasificacion.belongsTo(usuario);
+usuario.hasMany(actividad);
+actividad.belongsTo(usuario);
+usuario.hasMany(capacitacion);
+capacitacion.belongsTo(usuario);
+usuario.hasMany(subClasificacion);
+subClasificacion.belongsTo(usuario);
+usuario.hasMany(tipoCapacitacion);
+tipoCapacitacion.belongsTo(usuario);
+clasificacion.hasMany(subClasificacion);
+subClasificacion.belongsTo(clasificacion);
+clasificacion.hasMany(actividad);
+actividad.belongsTo(clasificacion);
+subClasificacion.hasMany(actividad);
+actividad.belongsTo(subClasificacion);
+actividad.hasMany(comentario);
+comentario.belongsTo(actividad);
+actividad.hasMany(puntacion);
+puntacion.belongsTo(actividad);
+capacitacion.hasMany(comentario);
+comentario.belongsTo(capacitacion);
+capacitacion.hasMany(video);
+video.belongsTo(capacitacion);
 
 module.exports = {
   actividad,
