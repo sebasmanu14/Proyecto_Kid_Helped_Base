@@ -63,7 +63,7 @@ passport.use(
         const { nombreCliente, apellido, nombre, correo, celular, contraseña } =
           req.body;
         let creacionCliente = {
-          nombre,
+          nombre, 
           apellido,
           correo,
           celular,
@@ -79,7 +79,7 @@ passport.use(
         creacionCliente.correo = await helpers.encryptPassword(
           correo
         );
-        creacionCliente.contraseña = await helpers.encryptPassword(contraseña);
+        //creacionCliente.contraseña = await helpers.encryptPassword(contraseña);
 
         const resultado = await orm.cliente.create(creacionCliente);
         creacionCliente.id = resultado.insertId;
@@ -120,7 +120,7 @@ passport.use(
             creacionCliente.correo = await helpers.encryptPassword(
               correo
             );
-            creacionCliente.contraseña = await helpers.encryptPassword(contraseña);
+            //creacionCliente.contraseña = await helpers.encryptPassword(contraseña);
 
             const resultado = await orm.cliente.create(creacionCliente);
             creacionCliente.id = resultado.insertId;

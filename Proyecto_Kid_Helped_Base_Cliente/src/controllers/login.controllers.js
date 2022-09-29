@@ -34,6 +34,16 @@ loginCtl.cerrarSesion=(req,res,next)=>{
    })
 }
 
+loginCtl.siguiente=(req,res,next)=>{
+    req.login(function(err){
+     if(err){
+         return next(err)
+     }
+     req.flash('success','se ingreso exitosamente')
+     res.redirect('/')
+    })
+ }
+
 module.exports=loginCtl
 
 

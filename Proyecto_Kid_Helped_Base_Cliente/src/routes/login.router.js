@@ -1,5 +1,5 @@
 const express=require('express')
-const { showLogin, login, showRegister, registro, cerrarSesion } = require('../controllers/login.controllers')
+const { showLogin, login, showRegister, registro, cerrarSesion, siguiente } = require('../controllers/login.controllers')
 const router=express.Router()
 
 
@@ -8,5 +8,6 @@ router.post('/login',login)
 router.get('/registro',showRegister)
 router.post('/registro',registro)
 router.get('/cierreSesion',cerrarSesion)
-
+router.get('/siguiente', siguiente)
+ 
 module.exports=router
