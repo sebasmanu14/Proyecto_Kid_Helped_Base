@@ -6,7 +6,7 @@ loginCtl.showLogin = (req, res) => {
 };
 
 loginCtl.login = passport.authenticate("local.signin", {
-  successRedirect: "/comentario",
+  successRedirect: "/tipoCapacitacion",
   failureRedirect: "/login",
   failureFlash: true,
 });
