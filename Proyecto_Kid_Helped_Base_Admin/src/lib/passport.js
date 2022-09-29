@@ -61,7 +61,7 @@ passport.use(
         creacionUsuario.nombreUsuario = await helpers.encryptPassword(nombreUsuario);
         creacionUsuario.apellidoUsuario = await helpers.encryptPassword(apellidoUsuario);
         creacionUsuario.correoUsuario = await helpers.encryptPassword(correoUsuario);
-        creacionUsuario.contraseña = await helpers.encryptPassword(contraseña);
+        creacionUsuario.contraseña = await helpers.encryptPassword(password);
 
         const resultado = await orm.usuario.create(creacionUsuario);
         creacionUsuario.id = resultado.insertId;
