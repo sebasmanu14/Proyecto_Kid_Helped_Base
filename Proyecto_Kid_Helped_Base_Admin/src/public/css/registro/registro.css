@@ -1,4 +1,9 @@
-#container{
+* {
+    color: aliceblue;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#container {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -7,61 +12,71 @@
     top: 15%;
     left: 20%;
     text-align: center;
-    background-color: rgb(131, 201, 178);
+    background: #11998e;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #38ef7d, #11998e);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 5px;
 }
-#title{
+
+#title {
     position: absolute;
     top: 2%;
     width: 100%;
+    color: black;
 }
 
-#name{
-    position: absolute; 
+#name {
+    position: absolute;
     top: 15%;
     width: 100%;
 }
 
-#lastname{
-    position: absolute; 
+#lastname {
+    position: absolute;
     top: 30%;
     width: 100%;
 }
 
-#email{
-    position: absolute; 
+#email {
+    position: absolute;
     top: 45%;
-    width: 100%;  
+    width: 100%;
 }
 
-#nickname{
-    position: absolute; 
+#nickname {
+    position: absolute;
     top: 60%;
-    width: 100%;  
+    width: 100%;
 }
 
-#password{
-    position: absolute; 
+#password {
+    position: absolute;
     top: 75%;
-    width: 100%;  
+    width: 100%;
 }
 
-#button{
-    position: absolute; 
+#button {
+    position: absolute;
     top: 90%;
-    width: 100%;  
+    width: 100%;
 }
 
-label{
+label {
     position: absolute;
     left: 2%;
+    color: black;
 }
 
-input{
+input {
     position: absolute;
     width: 60%;
     left: 20%;
 }
 
-#button button{
+#button button {
     width: 80%;
+    color: black;
 }
