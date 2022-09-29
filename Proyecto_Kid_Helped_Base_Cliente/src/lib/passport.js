@@ -6,7 +6,6 @@ const CryptoJS = require("crypto-js");
 const orm = require("../conf/dataBase.orm");
 const sql = require("../conf/database.sql");
 const helpers = require("./helpers");
-const cliente = require("../models/cliente");
 
 passport.use(
   "local.signin",
@@ -22,11 +21,10 @@ passport.use(
       });
       if (rows) {
         const cliente = rows;
-        const contraseña = await CryptoJS.AES.decrypt(
-          cliente.contraseña,
-          "secret"
-        );
+        const contraseña = await CryptoJS.AES.decrypt(cliente.contraseña, "secret");
         const validPassword = contraseña.toString(CryptoJS.enc.Utf8);
+        console.log(contraseña);
+        console.log(password);
         if (validPassword == password) {
           done(
             null,
@@ -37,11 +35,7 @@ passport.use(
           done(null, false, req.flash("message", "Datos incorrectos"));
         }
       } else {
-        return done(
-          null,
-          false,
-          req.flash("message", "El nombre de usuario no existe.")
-        );
+        return done(null, false, req.flash("message", "El nombre de usuario no existe."));
       }
     }
   )
@@ -60,26 +54,19 @@ passport.use(
         where: { nombreCliente: username },
       });
       if (cliente === null) {
-        const { nombreCliente, apellido, nombre, correo, celular, contraseña } =
-          req.body;
+        const { nombreCliente, apellido, nombre, correo, celular } = req.body;
         let creacionCliente = {
-          nombre, 
+          nombre,
           apellido,
           correo,
           celular,
           nombreCliente: username,
           contraseña: password,
         };
-        creacionCliente.nombre = await helpers.encryptPassword(
-          nombre
-        );
-        creacionCliente.apellido = await helpers.encryptPassword(
-          apellido
-        );
-        creacionCliente.correo = await helpers.encryptPassword(
-          correo
-        );
-        //creacionCliente.contraseña = await helpers.encryptPassword(contraseña);
+        creacionCliente.nombre = await helpers.encryptPassword(nombre);
+        creacionCliente.apellido = await helpers.encryptPassword(apellido);
+        creacionCliente.correo = await helpers.encryptPassword(correo);
+        creacionCliente.contraseña = await helpers.encryptPassword(password);
 
         const resultado = await orm.cliente.create(creacionCliente);
         creacionCliente.id = resultado.insertId;
@@ -88,21 +75,10 @@ passport.use(
       } else {
         if (cliente) {
           const clientes = cliente;
-          if (clientes.apellido == username) {
-            done(
-              null,
-              false,
-              req.flash("message", "El nombre de usuario ya existe.")
-            );
+          if (clientes.nombreCliente == username) {
+            done(null, false, req.flash("message", "El nombre de usuario ya existe."));
           } else {
-            const {
-              nombre,
-              apellido,
-              correo,
-              celular,
-              nombreCliente,
-              contraseña,
-            } = req.body;
+            const { nombre, apellido, correo, celular, nombreCliente } = req.body;
             let creacionCliente = {
               nombre,
               apellido,
@@ -111,16 +87,10 @@ passport.use(
               nombreCliente: username,
               contraseña: password,
             };
-            creacionCliente.nombre = await helpers.encryptPassword(
-              nombre
-            );
-            creacionCliente.apellido = await helpers.encryptPassword(
-              apellido
-            );
-            creacionCliente.correo = await helpers.encryptPassword(
-              correo
-            );
-            //creacionCliente.contraseña = await helpers.encryptPassword(contraseña);
+            creacionCliente.nombre = await helpers.encryptPassword(nombre);
+            creacionCliente.apellido = await helpers.encryptPassword(apellido);
+            creacionCliente.correo = await helpers.encryptPassword(correo);
+            creacionCliente.contraseña = await helpers.encryptPassword(password);
 
             const resultado = await orm.cliente.create(creacionCliente);
             creacionCliente.id = resultado.insertId;

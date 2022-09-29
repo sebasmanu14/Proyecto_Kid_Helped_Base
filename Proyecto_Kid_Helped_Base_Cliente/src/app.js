@@ -41,7 +41,7 @@ app.use(session({
 }))
 app.use(flash())
 app.use(passport.initialize())
-app.use(passport.session())
+app.use(passport.session()) 
 //global
 app.use((req, res, next) => {
     app.locals.message=req.flash('message')
@@ -54,6 +54,7 @@ app.use(express.static(path.join(__dirname, "public")));
 //routes
 app.use(require('./routes/index.router'))
 app.use(require('./routes/login.router'))
+app.use(require('./routes/comentario.router'))
 
  
 module.exports=app

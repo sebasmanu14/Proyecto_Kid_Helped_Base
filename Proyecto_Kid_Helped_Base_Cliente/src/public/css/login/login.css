@@ -1,180 +1,130 @@
-/* reseteo de estilos en la paguina */
-*{
-    margin: 0;
+*:before,
+*:after {
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
-  }
-  
-  /* cuerpo de la pagina*/
-  body{
-    background-image: url(./img/index/fondo1.jpg);
-  }
-  @font-face {
-    font-family: "Dunkin";
-    src: url(../font_word/OldNewspaperTypes.ttf);
-  }
-  /* contenedor general de la parte visual donde esta el juego*/
-  .container{
-    background-color: rgb(0,0,0,0.0);
-  }
-  
-  /* conedor de la parte visual */
-  .container__juego{
-    background-image: url(./img/index/fondo.jpg);
-    height: 650px;
-    margin: auto;
-    width: 450px;
-    margin-top: 15px;
-  }
-  /*///////////////////////////////////////////////////////////////////////////////////////////////////*/
-  /* PARTE DONDE ELIGES REGISTRARTE O INICIAR SESSION */
-  
-  #container__principal{
-    text-align: center;
-  }
-  /* titulo del juego */
-  .tittle__Game {
-    color: rgb(240, 240, 240);
-    padding-top: 40px;
-    padding-bottom: 30px;
-    text-align: center;
-    font-family: "Dunkin";
-  }
-  /* contenedor de los botones de iniciar session y registro*/
-  
-  /* bnt de iniciar session - bnt de registrarse */
-  .btn__Registrarse{
-    background-color: rgb(207, 207, 207);
-    border-radius: 10px;
-    margin-top: 0px;
-    height: 40px;
-    width: 150px;
-    font-family: "Dunkin";
-    position: relative;
-    top: -30px;
+}
+
+body {
+    background-color: #080710;
+}
+
+.background {
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+
+.background .shape {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.shape:first-child {
+    background: linear-gradient( #1845ad, #23a2f6);
     left: -80px;
-    
-    
-  }
-  .btn__Registrarse:hover{
-    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.555);
-  }
-  .btn__Registrarse:focus{
-    outline: none;
-  }
-  
-  .buttons_users{
-    display: grid;
-    grid-template-columns: repeat(2,50%);
-    position: relative;
-    left: -20px;
-    top: 30px;
-    
-  }
-  
-  /*///////////////////////////////////////////////////////////////////////////////////////////////////*/
-  /* parte del registro */
-  #container__iniciar__session{
-    width: 300px;
-    margin: auto;
-    text-align: center;
-    
-  }
-  #container__iniciar__session h1{
-    text-align: center;
-    color: rgb(240, 240, 240);
-    padding-top: 50px;
-    margin-bottom: 50px;
-    font-family: "Dunkin";
-  }
-  /* contenedor de los labels */
-  .container_label{
-    width: 120px;
-    height: auto;
-    margin-top: 35px;
-    margin-left: -50px;
-    text-align: right;
-  }
-  /* contenedor de los inputs */
-  .container_inputs{
-    width: 240px;
-    float: right;
-    margin-top: -93px;
-  }
-  .label__iniciar__session{
-    color: rgb(239, 238, 255);
-    font-family: "Dunkin";
-    text-align: right;
-  }
-  .input__iniciar__session{
-    width: 240px;
-    height: 25px;
-    margin: 15px;
-    margin-left: 45px;
-    text-align: center;
-    background-color: rgba(145, 151, 145, 0.884);
-    border: none;
-    border-bottom: 1px solid rgba(239, 238, 255, 0.829);
-    border-radius: 12px;
-    color: rgb(239, 238, 255);
-    font-family: "Dunkin";
-  }
-  .input__iniciar__session:focus{
-    outline: none;
-    text-align: center;
-  }
-  .btn__enviar__Is{
+    top: -80px;
+}
+
+.shape:last-child {
+    background: linear-gradient( to right, #ff512f, #f09819);
+    right: -30px;
+    bottom: -80px;
+}
+
+form {
+    height: 520px;
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.13);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
     border-radius: 10px;
-    margin-top: 35px;
-    height: 40px;
-    width: 110px;
-    font-family: "Dunkin";
-    position: relative;
-    right: -205px;
-    top: -20px;
-  
-   
-  }
-  .btn__enviar__Is:hover{
-    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.555);
-  }
-  /*menasaje de alerta de no resgistrado  */
-  .sms_alerta{
-    margin-top: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: rgb(219, 0, 0);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 50px 35px;
+}
+
+form * {
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+
+form h3 {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
     text-align: center;
-    display: none;
-  }
-  /*///////////////////////////////////////////////////////////////////////////////////////*/
-  .container__footer{
-    font-family: "Dunkin";
-    background-color: rgba(0, 1, 68, 0.671);
-    margin-top: 5vh;
-    padding: 30px;
-    padding-bottom: 40px;
-    width: 100%;
+}
+
+label {
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+input {
+    display: block;
     height: 50px;
-  }
-  .items__footer{
-    color: rgb(240, 240, 240);
-    list-style: none;
-    width: 33%;
-    float: right;
-  }
-  .items__footer a {
-    font-family: "Dunkin";
-    color: white;
-  }
-  /*///////////////////////////////////////////////////////////////////////////////////////////////////*/
-  /*creando clases para verificar si es correcto un input*/
-  .correcto{
-    border: 3px solid rgb(0, 255, 0);
-    background-color:chartreuse;
-  }
-  .incorrecto{
-    /*border: 3px solid rgb(255, 0, 0);*/
-    border: 3px solid #ff0000;
-    background-color: rgb(255, 0, 0);
-  }
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+::placeholder {
+    color: #e5e5e5;
+}
+
+button {
+    margin-top: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.social {
+    margin-top: 30px;
+    display: flex;
+}
+
+.social div {
+    background: red;
+    width: 150px;
+    border-radius: 3px;
+    padding: 5px 10px 10px 5px;
+    background-color: rgba(255, 255, 255, 0.27);
+    color: #eaf0fb;
+    text-align: center;
+}
+
+.social div:hover {
+    background-color: rgba(255, 255, 255, 0.47);
+}
+
+.social .fb {
+    margin-left: 25px;
+}
+
+.social i {
+    margin-right: 4px;
+}
