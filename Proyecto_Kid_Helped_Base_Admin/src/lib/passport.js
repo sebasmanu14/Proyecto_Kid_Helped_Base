@@ -25,7 +25,7 @@ passport.use(
         if (validPassword == password) {
           done(null, usuario, req.flash("message", "Bienvenido" + " " + usuario.apodoUsuario));
         } else {
-          done(null, false, req.flash("message", "Datos incorrecta"));
+          done(null, false, req.flash("message", "Datos incorrectos"));
         }
       } else {
         return done(
