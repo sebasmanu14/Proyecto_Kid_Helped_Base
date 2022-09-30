@@ -1,20 +1,27 @@
 <link rel="stylesheet" href="/css/capacitacion/agregarcapa.css">
-<div id="container">
-    
+
+<!-- crud-->
+   <div id="container__iniciar__session">
+
     <form action="/usuario/agregar/{{user.id_usuario}}" method="post">
-    <div id="titulo">
-        <p>Agregar Usuario Capacitación</p>
-    </div>
-    <div id="nombres">
-        <label>Nombre de la Capacitacion:</label>
-        <input type="text" name="nombres"required>
-    </div>
-     <div id="descripcion">
-        <label>Descripcion:</label>
-        <input type="text" name="descripcion"required>
-    </div>
-     
-    <div id="boton">
-    <button type="submit" id="">Guardar</button>
-    </div>
-   </form>
+
+        <div id="titulo">
+            <h3 >Agregar Usuario Capacitación</h3>
+        </div>
+
+        <div id="nombres">
+            <label >Nombre de la capacitacion</label>
+            <input type="text" name="nombres" required placeholder="Nombre de la capacitación" />
+        </div>
+
+        <div id="descripcion">
+            <label >Descripción</label>
+            <input type="text" name="descripcion" required placeholder="ingrese la debida descripción" />
+        </div>
+
+        <div id="boton">
+            <button type="submit" id="">Guardar</button>
+        </div>
+
+    </form>
+
