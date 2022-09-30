@@ -110,6 +110,8 @@ capacitacion.hasMany(comentario);
 comentario.belongsTo(capacitacion);
 capacitacion.hasMany(video);
 video.belongsTo(capacitacion);
+actividad.hasMany(video);
+video.belongsTo(actividad)
 
 module.exports = {
   actividad,

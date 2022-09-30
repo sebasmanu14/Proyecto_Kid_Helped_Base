@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="/src/public/css/capacitacion/capacitacion.css">
+<div id="container">
+    {{#each lista}}
+    
+    <form action="/usuario/editar/{{id_capacitacion}}" method="post">
+    <div id="titulo">
+        <p>Agregar Capacitación</p>
+    </div>
+    <div id="nombres">
+        <label>Nombre de la Capacitacion:</label>
+        <input type="text" name="nombres"  value="{{nombres}}" required>
+    </div>
+     <div id="descripcion">
+        <label>Descripcion:</label>
+        <input type="text" name="descripcion"value="{{descripcion}}"required>
+    </div>
+    
+    <div id="boton">
+    <button type="submit">Actualizar</button>
+    </form>
+    {{#each }}
+    </div>
+
+
