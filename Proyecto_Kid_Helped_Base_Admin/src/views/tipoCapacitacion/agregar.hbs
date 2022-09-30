@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="/css/capacitacion/capacitacion.css">
+<div id="container">
+    
+    <form action="/usuario/agregar/{{user.id_usuario}}" method="post">
+    <div id="titulo">
+        <p>Agregar Usuario Capacitación</p>
+    </div>
+    <div id="nombres">
+        <label>Nombre de la Capacitacion:</label>
+        <input type="text" name="nombres"required>
+    </div>
+     <div id="descripcion">
+        <label>Descripcion:</label>
+        <input type="text" name="descripcion"required>
+    </div>
+     
+    <div id="boton">
+    <button type="submit" id="">Guardar</button>
+    </div>
+   </form>
