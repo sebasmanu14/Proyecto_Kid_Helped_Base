@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/css/tipocapa/editarcapa.css">
+<div id="container">
+    {{#each lista}}
+    
+    <form action="/tipoCapacitacion/editar/{{id_tipoCapacitaciones}}" method="post">
+    <div id="titulo">
+        <p>Agregar Capacitación</p>
+    </div>
+    <div id="nombres">
+        <label>Nombre de la Capacitacion:</label>
+        <input type="text" name="nombre"  value="{{nombre}}" required>
+    </div>
+     <div id="descripcion">
+        <label>Estado:</label>
+        <input type="text" name="estado"value="{{estado}}"required>
+    </div>
+    <div id="boton">
+    <button type="submit">Actualizar</button>
+    </form>
+    {{/each }}
+    </div>

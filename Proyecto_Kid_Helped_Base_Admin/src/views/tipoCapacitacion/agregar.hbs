@@ -1,17 +1,17 @@
-<link rel="stylesheet" href="/css/capacitacion/capacitacion.css">
+<link rel="stylesheet" href="/css/tipoCapa/agregarcapa.css">
 <div id="container">
     
-    <form action="/usuario/agregar/{{user.id_usuario}}" method="post">
+    <form action="/tipoCapacitacion/agregar/{{user.id_usuario}}" method="post">
     <div id="titulo">
-        <p>Agregar Usuario Capacitación</p>
+        <p>Agregar Tipo de Capacitacion</p>
     </div>
     <div id="nombres">
-        <label>Nombre de la Capacitacion:</label>
-        <input type="text" name="nombres"required>
+        <label>Nombre de Capacitacion:</label>
+        <input type="text" name="nombre"required>
     </div>
-     <div id="descripcion">
-        <label>Descripcion:</label>
-        <input type="text" name="descripcion"required>
+     <div id="estado">
+        <label>Estado:</label>
+        <input type="text" name="estado"required>
     </div>
      
     <div id="boton">
