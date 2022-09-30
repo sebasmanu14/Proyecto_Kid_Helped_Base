@@ -7,9 +7,9 @@ const capacitacion = (sequelize, type) => {
         primaryKey: true,
         autoIncrement: true,
       },
-      nombres: type.STRING(99),
-      descripcion: type.STRING(99),
-      estado: type.STRING(99),
+      nombres: type.STRING,
+      descripcion: type.STRING(3000),
+      estado: type.STRING,
 
       creacionCapacitaciones: {
         type: "TIMESTAMP",

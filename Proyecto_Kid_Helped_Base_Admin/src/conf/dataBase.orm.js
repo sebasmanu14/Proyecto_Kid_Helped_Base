@@ -23,7 +23,7 @@ const clienteModels = require("../models/cliente");
 const comentarioModels = require("../models/comentario");
 const objetivoModels = require("../models/objetivo");
 const paginaPrincipalModels = require("../models/paginaPrincipal");
-const puntacionModels = require("../models/puntacion");
+const puntuacionModels = require("../models/puntuacion");
 const respuestaComentarioModels = require("../models/respuestaComentario");
 const subClasificacionModels = require("../models/subClasificacion");
 const tipoCapacitacionModels = require("../models/tipoCapacitacion");
@@ -63,7 +63,7 @@ const cliente = clienteModels(sequelize, Sequelize);
 const comentario = comentarioModels(sequelize, Sequelize);
 const objetivo = objetivoModels(sequelize, Sequelize);
 const paginaPrincipal = paginaPrincipalModels(sequelize, Sequelize);
-const puntacion = puntacionModels(sequelize, Sequelize);
+const puntuacion = puntuacionModels(sequelize, Sequelize);
 const respuestaComentario = respuestaComentarioModels(sequelize, Sequelize);
 const subClasificacion = subClasificacionModels(sequelize, Sequelize);
 const tipoCapacitacion = tipoCapacitacionModels(sequelize, Sequelize);
@@ -80,8 +80,8 @@ comentario.hasMany(respuestaComentario);
 respuestaComentario.belongsTo(comentario);
 cliente.hasMany(comentario);
 comentario.belongsTo(cliente);
-cliente.hasMany(puntacion);
-puntacion.belongsTo(cliente);
+cliente.hasMany(puntuacion);
+puntuacion.belongsTo(cliente);
 usuario.hasMany(paginaPrincipal);
 paginaPrincipal.belongsTo(usuario);
 paginaPrincipal.hasMany(objetivo);
@@ -104,12 +104,14 @@ subClasificacion.hasMany(actividad);
 actividad.belongsTo(subClasificacion);
 actividad.hasMany(comentario);
 comentario.belongsTo(actividad);
-actividad.hasMany(puntacion);
-puntacion.belongsTo(actividad);
+actividad.hasMany(puntuacion);
+puntuacion.belongsTo(actividad);
 capacitacion.hasMany(comentario);
 comentario.belongsTo(capacitacion);
 capacitacion.hasMany(video);
 video.belongsTo(capacitacion);
+actividad.hasMany(video);
+video.belongsTo(actividad)
 
 module.exports = {
   actividad,
@@ -119,7 +121,7 @@ module.exports = {
   comentario,
   objetivo,
   paginaPrincipal,
-  puntacion,
+  puntuacion,
   respuestaComentario,
   subClasificacion,
   tipoCapacitacion,

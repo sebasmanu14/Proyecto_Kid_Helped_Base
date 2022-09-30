@@ -5,9 +5,8 @@ const respuestaComentario=(sequelize,type)=>{
             primaryKey:true,
             autoIncrement:true
         },
-        id_detalle:type.STRING(99),
-        respuesta:type.STRING(99),
-        id_comentario:type.STRING(99),
+        respuesta:type.STRING(3000),   
+      
 
 
         creacionrespuestaComentario: {

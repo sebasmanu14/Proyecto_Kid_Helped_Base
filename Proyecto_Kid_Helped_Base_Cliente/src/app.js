@@ -56,6 +56,7 @@ app.use(require('./routes/index.router'))
 app.use(require('./routes/login.router'))
 app.use(require('./routes/comentario.router'))
 app.use(require('./routes/puntuacion.router'))
+app.use(require('./routes/tipoCliente.router'))
 
  
 module.exports=app

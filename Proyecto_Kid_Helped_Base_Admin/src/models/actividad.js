@@ -7,10 +7,10 @@ const actividad = (sequelize, type) => {
         primaryKey: true,
         autoIncrement: true,
       },
-      nombreActividad: type.STRING(99),
-      descripcion: type.STRING(200),
-      imagen: type.STRING(99),
-      urlActividad: type.STRING(99),
+      nombreActividad: type.STRING,
+      descripcion: type.STRING(3000),
+      imagen: type.STRING,
+      urlActividad: type.STRING,
 
       creacionActividad: {
         type: "TIMESTAMP",

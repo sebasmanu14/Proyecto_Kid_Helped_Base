@@ -1,21 +1,21 @@
-const puntacion = (sequelize, type) => {
+const puntuacion = (sequelize, type) => {
   return sequelize.define(
-    "puntaciones",
+    "puntuaciones",
     {
-      id_puntacion: {
+      id_puntuacion: {
         type: type.INTEGER,
         primaryKey: true,
         autoIncrement: true,
       },
-      puntacion: type.INTEGER,
+      puntuacion: type.INTEGER,
 
 
-      creacionPuntacion: {
+      creacionPuntuacion: {
         type: "TIMESTAMP",
         defaultValue: type.literal("CURRENT_TIMESTAMP"),
         allowNull: false,
       },
-      actualizarPuntacion: {
+      actualizarPuntuacion: {
         type: "TIMESTAMP",
         defaultValue: type.literal("CURRENT_TIMESTAMP"),
         allowNull: false,
@@ -27,4 +27,4 @@ const puntacion = (sequelize, type) => {
   );
 };
 
-module.exports = puntacion;
+module.exports = puntuacion;

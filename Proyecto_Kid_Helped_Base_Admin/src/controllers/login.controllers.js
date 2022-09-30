@@ -1,39 +1,36 @@
-const loginCtl={}
-const passport=require('passport')
-const { render } = require('../app')
-loginCtl.showLogin=(req,res)=>{
-    res.render('login/login')
-}
+const loginCtl = {};
+const passport = require("passport");
 
-loginCtl.login=passport.authenticate('local.signin',{
-    successRedirect: '/siguiente',
-    failureRedirect: '/login',
-    failureFlash: true
-})
+loginCtl.showLogin = (req, res) => {
+  res.render("login/login");
+};
 
-loginCtl.showRegister=(req,res)=>{
-    res.render('login/registro')
-}
+loginCtl.login = passport.authenticate("local.signin", {
+  successRedirect: "/tipoCapacitacion/listar/",
+  failureRedirect: "/login",
+  failureFlash: true,
+});
 
-loginCtl.registro=passport.authenticate('local.signup',{
-    successRedirect: '/cierreSesion',
-    failureRedirect: '/registro',
-    failureFlash: true
-})
+loginCtl.showRegister = (req, res) => {
+  res.render("login/registro");
+};
+
+loginCtl.registro = passport.authenticate("local.signup", {
+  successRedirect: "/cierreSesion",
+  failureRedirect: "/registro",
+  failureFlash: true,
+});
 
 //Cerrar Session
 
-loginCtl.cerrarSesion=(req,res,next)=>{
-   req.logout(function(err){
-    if(err){
-        return next(err)
+loginCtl.cerrarSesion = (req, res, next) => {
+  req.logout(function (err) {
+    if (err) {
+      return next(err);
     }
-    req.flash('success','Seccion cerrada exitosamente')
-    res.redirect('/')
-   })
-}
+    req.flash("success", "Seccion cerrada exitosamente");
+    res.redirect("/");
+  });
+};
 
-module.exports=loginCtl
-
-
-
+module.exports = loginCtl;

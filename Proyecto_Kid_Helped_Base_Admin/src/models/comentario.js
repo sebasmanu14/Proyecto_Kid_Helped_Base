@@ -5,11 +5,9 @@ const comentario=(sequelize,type)=>{
             primaryKey:true,
             autoIncrement:true
         },
-        id_comentario:type.STRING(99),
-        comentario:type.STRING(99),
-        fecha_puclicacion:type.STRING(99),
-        id_actividades:type.STRING(99),
-        id_cliente:type.STRING(99),
+        comentario:type.STRING(3000),
+        fecha_puclicacion:type.STRING,
+        
 
 
         creacioncomentario: {

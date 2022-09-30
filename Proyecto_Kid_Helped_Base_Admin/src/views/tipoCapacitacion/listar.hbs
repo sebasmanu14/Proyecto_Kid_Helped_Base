@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="/css/tipocapa/listarcapa.css">
+<form action="/tipoCapacitacion/listar/{{user.id_usuario}}" method="get"></form>
+<div id="container">
+    <div class="row">
+        {{#each lista}}
+        <div id="tarjeta">
+            <div id="id_capacitacion">
+                <p>{{nombre}}</p>
+            </div>
+            <div id="codigo">
+                <p>{{estado}}</p>
+            </div>
+            <div id="boton">
+                <div id="editar">
+                    <a href="/tipoCapacitacion/editar/{{id_tipoCapacitaciones}}" ><button type="button">Editar</button></a> 
+                </div>
+                <div id="eliminar">
+                    <a href="/tipoCapacitacion/eliminar/{{id_tipoCapacitaciones}}" ><button type="button">Eliminar</button></a> 
+                </div>
+            </div>
+        </div>
+        {{/each }}
+    </div>
+</div>
