@@ -8,7 +8,7 @@ capacitacionCtl.mostrar=(req,res)=>{
 
 //mandar
 capacitacionCtl.mandar=async(req,res)=>{
-    const id =req.user.idusuario
+    const id =req.user.id_usuario
     const {nombres,descripcion}=req.body
     const nuevoEnvio={
         nombres,
@@ -16,7 +16,7 @@ capacitacionCtl.mandar=async(req,res)=>{
     }
     await orm.capacitacion.create(nuevoEnvio)
     req.flash('success','Guardado exitosamente')
-    res.redirect('usuario/listar/'+id)
+    res.redirect('/usuario/listar/'+id)
 }
 
 capacitacionCtl.listar=async(req,res)=>{
@@ -26,14 +26,14 @@ capacitacionCtl.listar=async(req,res)=>{
 
 //traer datos
 capacitacionCtl.traer=async(req,res)=>{
-    const ids=req.paraws.id
+    const ids=req.params.id
     const lista =await sql.query('select * from capacitaciones where id_capacitacion =?',[ids])
-    res.render('usuario/listar',{lista})
+    res.render('usuario/editar',{lista})
 }
 
 capacitacionCtl.actualizar=async(req,res)=>{
-    const id =req.user.idusuario
-    const ids=req.paraws.id
+    const id =req.user.id_usuario
+    const ids=req.params.id
     const {nombres,descripcion}=req.body
     const nuevoEnvio={
         nombres,
@@ -47,7 +47,8 @@ capacitacionCtl.actualizar=async(req,res)=>{
     res.redirect('/usuario/listar/'+id);
 }
  capacitacionCtl.eliminar= async(req,res) =>{
-    const ids= req.paraws.id
+    const ids= req.params.id
+    const id =req.user.id_usuario
     await orm.capacitacion.destroy({where:{id_capacitacion:ids}})
     .then(()=>{
     req.flash('success','Eliminado exitosamente')

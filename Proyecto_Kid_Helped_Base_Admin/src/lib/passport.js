@@ -22,6 +22,7 @@ passport.use(
         const usuario = rows;
         const contraseña = await CryptoJS.AES.decrypt(usuario.contraseña, 'secret');
         const validPassword = contraseña.toString(CryptoJS.enc.Utf8);
+        console.log(validPassword+'HOLA')
         if (validPassword == password) {
           done(null, usuario, req.flash("message", "Bienvenido" + " " + usuario.apodoUsuario));
         } else {
@@ -70,7 +71,7 @@ passport.use(
       } else {
         if (usuario) {
           const usuarios = usuario
-          if (usuarios.apellidoUsuario == username) {
+          if (usuarios.apodoUsuario == username) {
             done(null, false, req.flash("message", "El nombre de usuario ya existe."))
           } else {
             const {  nombreUsuario,apellidoUsuario,correoUsuario,contraseña} = req.body

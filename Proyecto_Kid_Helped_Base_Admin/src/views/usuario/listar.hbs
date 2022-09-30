@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/src/public/css/capacitacion/capacitacion.css">
+<link rel="stylesheet" href="/css/capacitacion/capacitacion.css">
 <form action="/usuario/listar/{{user.id_usuario}}" method="get"></form>
 <div id="container">
     <div class="row">
@@ -10,13 +10,15 @@
             <div id="codigo">
                 <p>{{descripcion}}</p>
             </div>
-            <div  id="boton">
-            <div id="editar"> </div>
-            <a href="/usuario/editar"{{id_capacitacion}}></a> <button type="button">Editar</button>
-           <div id="eliminar"> </div>
-           <a href="/usuario/eliminar"{{id_capacitacion}}></a> <button type="button">Eliminar</button>
-         </div> 
+            <div id="boton">
+                <div id="editar">
+                    <a href="/usuario/editar/{{id_capacitacion}}" ><button type="button">Editar</button></a> 
+                </div>
+                <div id="eliminar">
+                    <a href="/usuario/eliminar/{{id_capacitacion}}" ><button type="button">Eliminar</button></a> 
+                </div>
+            </div>
         </div>
-        {{#each }}
+        {{/each }}
     </div>
 </div>

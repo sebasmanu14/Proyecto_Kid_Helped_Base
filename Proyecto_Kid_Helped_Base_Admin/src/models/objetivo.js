@@ -11,7 +11,7 @@ const objetivo = (sequelize, type) => {
         PrimaryKey: true,
         autoIncement: true,
       },
-      objetivos: type.STRING,
+      objetivos: type.STRING(3000),
       redesSociales: type.STRING,
 
       creacionObjetivo: {

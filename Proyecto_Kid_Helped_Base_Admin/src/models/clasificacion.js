@@ -7,8 +7,8 @@ const clasificacion = (sequelize, type) => {
         primaryKey: true,
         autoIncrement: true,
       },
-      nombre: type.STRING(99),
-      detalle: type.STRING(200),
+      nombre: type.STRING,
+      detalle: type.STRING(3000),
 
       creacionClasificacion: {
         type: "TIMESTAMP",
