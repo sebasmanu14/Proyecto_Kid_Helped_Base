@@ -1,0 +1,57 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+.perfil_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(67, 110, 227);
+  background: linear-gradient(90deg, rgba(67, 110, 227, 1) 0%, rgba(36, 115, 126, 1) 57%);
+  background: rgb(67, 110, 227);
+  background: linear-gradient(90deg, rgba(67, 110, 227, 1) 0%, rgba(36, 115, 126, 1) 57%);
+  min-height: 100vh;
+  height: 100%;
+}
+.content {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.329);
+  max-width: 30rem;
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+.imagen {
+  max-width: 20rem;
+  width: 100%;
+  filter: invert(0%);
+}
+
+.form-field {
+  display: flex;
+  gap: 0.1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+.label_form {
+  width: 100%;
+  font-size: 0.9rem;
+  text-align: center;
+  color: white;
+}
+.input-form {
+  width: 100%;
+  outline: none;
+  padding: 0.5rem 0.4rem;
+  display: inline-flex;
+}
+.title{
+ color: rgb(1, 47, 196);
+}
