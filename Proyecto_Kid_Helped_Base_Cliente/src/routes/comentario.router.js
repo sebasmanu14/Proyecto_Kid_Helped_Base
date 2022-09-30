@@ -4,4 +4,3 @@ const router = express.Router();
 router.get("/comentario", showComentario);
 
 module.exports = router;
-

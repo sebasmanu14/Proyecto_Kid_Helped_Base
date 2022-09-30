@@ -8,7 +8,7 @@ const cliente = (sequelize, type) => {
         autoIncrement: true,
       },
       nombreCliente: type.STRING(99),
-      apellido: type.STRING,
+      apellido: type.STRING, 
       nombre: type.STRING,
       correo: type.STRING,
       celular: type.STRING,

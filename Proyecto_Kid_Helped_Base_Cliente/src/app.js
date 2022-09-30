@@ -55,6 +55,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(require('./routes/index.router'))
 app.use(require('./routes/login.router'))
 app.use(require('./routes/comentario.router'))
+app.use(require('./routes/puntuacion.router'))
 
  
 module.exports=app

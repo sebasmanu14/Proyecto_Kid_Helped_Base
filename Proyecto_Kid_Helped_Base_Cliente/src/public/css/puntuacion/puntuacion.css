@@ -1,0 +1,155 @@
+/*navegador de header */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    color: white;
+    font-family: 'calibri';
+} 
+
+header{
+    background-color: white;
+    color: black;
+    width: 100%;
+    clear: both;
+    content: '';
+    display: table;
+}
+
+menu{
+    width: 900px;
+    margin: 0 auto;
+}
+
+#title{
+    color: #444;
+    width: 500px;
+    height: 50px;
+    float: left;
+    padding: 8px;
+}
+
+nav{
+    float: right;
+}
+
+nav ul li {
+    list-style: none;
+    margin-left: 25px;
+    padding: 12px ;
+    float: left;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #444;
+    font-weight: bold;
+}
+
+nav ul li a::before {
+    display: block;
+    content: '';
+    width: 0%;
+    background: #444;
+    height: 5px;
+    top: 0;
+    position: absolute;
+    transition: width 0.2s;
+}
+
+nav ul li a:hover::before {
+    width: 100%;
+}
+
+/*   parte body*/
+
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    transform: rotate(-90deg);
+    object-fit: cover;
+    padding: 10px;
+}
+
+#titulo{
+    text-align: center;
+    padding: 40px;
+}
+
+#contenido {
+    display: flex;
+    margin: 60px;
+}
+
+#articulos {
+    width: 80%;
+    border-right: 3px solid white ;
+}
+
+#secciones {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+#secciones h2{
+    padding: 10px;
+    text-align: center;
+}
+
+/*  progreso de porcentaje*/
+#container{
+    color: white;
+    text-align: center;
+}
+
+#container .progreso {
+    top: 100px;
+}
+
+#progress-bar{
+    width: 200px;
+    height: 20px;
+    background-color: gray;
+    position: relative;
+    top: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 30px;
+}
+
+
+#loading{
+    width: 100px;
+    height: 25px;
+    font-size: 30px;
+    position: relative;
+    top: 60%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#progress{
+    width: 0%;
+    height: 100%;
+    background-color: limegreen;
+    border-radius: 30px;
+    animation: move 3s linear;
+}
+
+@keyframes move {
+    to{
+        width: 100%;
+    }
+}

@@ -2,7 +2,7 @@ const express = require("express");
 const {
   showLogin,
   login,
-  showRegister,
+  showRegister, 
   registro,
   cerrarSesion,
 } = require("../controllers/login.controllers");

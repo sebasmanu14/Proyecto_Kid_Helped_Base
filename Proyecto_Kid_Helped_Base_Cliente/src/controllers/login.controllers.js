@@ -1,6 +1,6 @@
 const loginCtl={}
 const passport=require('passport')
-
+ 
 loginCtl.showLogin=(req,res)=>{
     res.render('login/login')
 }

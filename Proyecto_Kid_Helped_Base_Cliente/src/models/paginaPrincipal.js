@@ -8,7 +8,7 @@ const paginaPrincipal = (sequelize, type) => {
         autoIncrement: true,
       },
       nombrePagina: type.STRING(99),
-      mision: type.STRING,
+      mision: type.STRING, 
       vision: type.STRING,
         contraseña: type.STRING,
       

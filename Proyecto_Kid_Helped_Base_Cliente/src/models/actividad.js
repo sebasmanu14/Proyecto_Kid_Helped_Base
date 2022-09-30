@@ -5,7 +5,7 @@ const actividad = (sequelize, type) => {
       id_actividad: {
         type: type.INTEGER,
         primaryKey: true,
-        autoIncrement: true,
+        autoIncrement: true, 
       },
       nombreActividad: type.STRING(99),
       descripcion: type.STRING(200),
