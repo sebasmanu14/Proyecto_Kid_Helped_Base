@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="/css/clasificacion/listar.css"/>
+
+
+<!-- tablas-->
+<form action="/clasificacion/listar/{{user.id_usuario}}" method="get">
+    <div id="container">
+
+            <div class="row">
+
+            
+            {{#each lista}}
+            
+                <div id="id_clasificacion">
+                    <p>{{nombre}}</p>
+                </div>
+
+                    <br>
+
+                <div id="detalle">
+                    <p>{{detalle}}</p>
+                </div>
+
+        
+                <br>
+                <div id="boton">
+                    <a href="/clasificacion/editar/{{id_clasificacion}}"><button type="button">Editar</button></a> 
+                </div>
+                <br>
+
+                <div id="eliminar">
+                <a href="/clasificacion/eliminar/{{id_clasificacion}}" ><button type="button">Eliminar</button></a> 
+                </div>
+
+            
+            {{/each }}
+            </div>
+    </div>
+</form>
