@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/css/subclasificacion/agregar.css">
+
+<div id="contenedor">
+    <form action="/subclasificacion/agregar/{{user.id_usuario}}" method="post">
+    <div id="titulo">
+        <p>Agregar Nombre de Subclasificacion</p>
+    </div>
+    <div id="nombre">
+        <label>Nombre de la Subclasificacion:</label>
+        <input type="text" name="nombre" required  placeholder=" ingrese">
+    </div>
+    <div id="detalle">
+        <label>Descripcion de la Subclasificacion:</label>
+        <input type="text" name="detalle" required placeholder=" ingrese">
+    </div>
+
+    <div id="boton">
+        <button type="submit">GUARDAR</button>
+    </div>
+    </form>
+</div>

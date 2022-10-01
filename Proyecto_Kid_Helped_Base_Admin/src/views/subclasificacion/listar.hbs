@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="/css/subclasificacion/listar.css"/>
+
+
+<!-- tablas-->
+<form action="/subclasificacion/listar/{{user.id_subclasificacion}}" method="get">
+    <div id="container">
+
+            <div class="row">
+   
+            {{#each lista}}
+            
+                <div id="id_subclasificacion">
+                    <p>{{nombre}}</p>
+                </div>
+
+                    <br>
+
+                <div id="detalle">
+                    <p>{{detalle}}</p>
+                </div>
+
+                <br>
+                <div id="boton">
+                    <a href="/subclasificacion/editar/{{id_subclasificacion}}"><button type="button">Editar</button></a> 
+                </div>
+                <br>
+
+                <div id="eliminar">
+                <a href="/subclasificacion/eliminar/{{id_subclasificacion}}" ><button type="button">Eliminar</button></a> 
+                </div>
+
+            
+            {{/each }}
+            </div>
+    </div>
+</form>
