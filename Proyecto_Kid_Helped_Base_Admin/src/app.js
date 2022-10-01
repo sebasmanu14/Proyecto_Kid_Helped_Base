@@ -57,5 +57,6 @@ app.use(require('./routes/login.router'))
 app.use('/capacitacion',require('./routes/capacitacion.router'))
 app.use('/tipoCapacitacion',require('./routes/tipocapacitacion.router')) 
 app.use('/video',require('./routes/video.router'))
+app.use('/clasificacion',require('./routes/clasificacion.router'))
 
 module.exports=app
