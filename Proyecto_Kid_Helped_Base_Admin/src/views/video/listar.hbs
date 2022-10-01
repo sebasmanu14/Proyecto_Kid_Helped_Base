@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="/css/video/agregar.css"/>
+
+<!-- tablas-->
+<form action="/video/listar/{{user.id_capacitacion}}" method="get">
+    <div id="container">
+
+            <div class="background">
+
+            
+            {{#each lista}}
+            
+                <div class="name" id="id_video">
+                   <div class="bloque">{{url}}</div> 
+                </div>
+
+                    <br>
+
+                <div id="descripcion">
+                    <div class="bloque">{{descripcion}}</div> 
+                </div>
+
+                <div id="tipo">
+                    <div class="bloque">{{tipo}}</div> 
+                </div>
+
+                <br>
+                <div id="boton">
+                    <a href="/video/editar/{{id_video}}"><button type="button">Editar</button></a> 
+                </div>
+                <br>
+
+                <div id="eliminar">
+                <a href="/video/eliminar/{{id_video}}" ><button type="button">Eliminar</button></a> 
+                </div>
+
+            
+            {{/each }}
+            </div>
+    </div>
+</form>

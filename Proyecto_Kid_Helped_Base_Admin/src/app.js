@@ -12,7 +12,7 @@ const fileupload = require("express-fileupload");
 const {database}=require('./keys')
 
 //Inicializacion
-const app = express();
+const app = express();  
 require('./lib/passport')
 
 const handlebars=exphbs.create({
@@ -56,6 +56,6 @@ app.use(require('./routes/index.router'))
 app.use(require('./routes/login.router'))
 app.use('/usuario',require('./routes/capacitacion.router'))
 app.use('/tipoCapacitacion',require('./routes/tipocapacitacion.router')) 
-
+app.use('/video',require('./routes/video.router'))
 
 module.exports=app
