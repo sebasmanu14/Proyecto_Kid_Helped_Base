@@ -7,10 +7,9 @@ const paginaPrincipal = (sequelize, type) => {
         primaryKey: true,
         autoIncrement: true,
       },
-      nombrePagina: type.STRING(99),
-      mision: type.STRING, 
-      vision: type.STRING,
-        contraseña: type.STRING,
+      nombrePagina: type.STRING,
+      mision: type.STRING(3000),
+      vision: type.STRING(3000),
       
       creacionpaginaPrincipal: {
         type: "TIMESTAMP",
