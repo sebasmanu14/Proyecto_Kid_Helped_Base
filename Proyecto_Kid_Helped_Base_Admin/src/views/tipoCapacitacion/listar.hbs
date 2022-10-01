@@ -3,17 +3,17 @@
 <form action="/usuario/listar/{{user.id_usuario}}" method="get">
     <div id="container">
 
-            <div class="background"> 
+            <div class="row"> 
             {{#each lista}}
             
-                <div class="name" id="tarjeta">
-                   <div class="bloque" id="id_tipoCapacitacion">{{nombre}}</div> 
+                <div id="tarjeta">
+                   <p>{{nombre}}</p>
                 </div>
 
                     <br>
 
                 <div id="estado">
-                    <div class="bloque">{{estado}}</div> 
+                   <p>{{estado}}</p>
                 </div>
 
                 <br>

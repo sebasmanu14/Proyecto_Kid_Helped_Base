@@ -5,23 +5,23 @@
 <form action="/video/listar/{{user.id_capacitacion}}" method="get">
     <div id="container">
 
-            <div class="background">
+            <div class="row">
 
             
             {{#each lista}}
             
-                <div class="name" id="id_video">
-                   <div class="bloque">{{url}}</div> 
+                <div id="id_video">
+                    <p>{{url}}</p>
                 </div>
 
                     <br>
 
                 <div id="descripcion">
-                    <div class="bloque">{{descripcion}}</div> 
+                    <p>{{descripcion}}</p>
                 </div>
 
                 <div id="tipo">
-                    <div class="bloque">{{tipo}}</div> 
+                    <p>{{tipo}}</p>
                 </div>
 
                 <br>

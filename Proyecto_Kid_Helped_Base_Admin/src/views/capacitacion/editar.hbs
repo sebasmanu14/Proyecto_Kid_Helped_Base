@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="/css/capacitacion/editarcapa.css">
+<!--/css/capacitacion/editarcapa.css-->
+
+<!-- agregar - editar - boton -->
+
+<div id="container">
+    {{#each lista}}
+
+    <form action="/capacitacion/editar/{{id_capacitacion}}" method="post">
+
+        <div id="titulo">
+            <h3>Agregar Capacitación</h3>
+        </div>
+
+        <div id="nombres">
+            <label>Nombre de la capacitacion:</label>
+            <input type="text" name="nombres" value="{{nombres}}" required placeholder="Nombre de la capacitación" />
+        </div>
+
+        <div id="descripcion">
+            <label>Descripción:</label>
+            <input type="text" name="descripcion" value="{{descripcion}}" required
+                placeholder="ingrese la debida descripción" />
+        </div>
+
+        <div id="estado">
+            <label>Estado de la Capacitacion:</label>
+            <input type="text" name="estado" required placeholder="ingrese el estado de la capacitacion" />
+        </div>
+        <!-- boton de actualizar -->
+        <div id="boton">
+            <button type="submit">Actualizar</button>
+        </div>
+
+    </form>
+    {{/each }}
+</div>

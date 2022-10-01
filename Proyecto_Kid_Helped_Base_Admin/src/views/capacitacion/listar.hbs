@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="/css/capacitacion/listarcapa.css"/><!--/css/capacitacion/listarcapa.css-->
+
+<!-- tablas-->
+<form action="/capacitacion/listar/{{user.id_usuario}}" method="get">
+    <div id="container">
+
+            <div class="row">
+
+            {{#each lista}}
+            
+                <div id="id_capacitacion">
+                   <p>{{nombres}}</p>
+                </div>
+
+                    <br>
+
+                <div id="codigo">
+                    <p>{{descripcion}}</p>
+                </div>
+
+                <div id="estado">
+                    <p>{{estado}}</p>
+                </div>
+
+                <br>
+                <div id="boton">
+                    <a href="/capacitacion/editar/{{id_capacitacion}}"><button type="button">Editar</button></a> 
+                </div>
+                <br>
+
+                <div id="eliminar">
+                <a href="/capacitacion/eliminar/{{id_capacitacion}}" ><button type="button">Eliminar</button></a> 
+                </div>
+
+            
+            {{/each }}
+            </div>
+    </div>
+</form>
