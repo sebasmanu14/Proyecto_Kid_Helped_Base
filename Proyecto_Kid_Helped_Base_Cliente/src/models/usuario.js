@@ -5,11 +5,11 @@ const usuario=(sequelize,type)=>{
             primaryKey:true,
             autoIncrement:true
         },
-        nombreUsuario:type.STRING(99),
-        apellidoUsuario:type.STRING(99),
-        correoUsuario:type.STRING(99),
+        nombreUsuario:type.STRING,
+        apellidoUsuario:type.STRING,
+        correoUsuario:type.STRING,
         apodoUsuario:type.STRING(99),
-        contraseña: type.STRING(10),
+        contraseña: type.STRING,
         
 
 

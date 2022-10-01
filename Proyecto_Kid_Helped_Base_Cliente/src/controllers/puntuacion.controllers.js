@@ -1,5 +1,3 @@
-const { SqlInMemory } = require("typeorm/driver/SqlInMemory");
-
 const puntCtl = {};
 const orm =require('../conf/dataBase.orm')
 const sql =require('../conf/database.sql')

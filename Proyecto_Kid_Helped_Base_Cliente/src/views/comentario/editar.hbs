@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="/css/comentario/editarcomentario.css">
+
+<!-- agregar - editar - boton -->
+
+   <div id="container">
+        {{#each lista}}
+
+            <form action="/comentario/editar/{{id_comentario}}" method="post">
+
+                <div id="titulo">
+                    <h3 >Agregar Comentario</h3>
+                </div>
+
+                <div id="comentarios">
+                    <label >comentarios:</label>
+                    <input type="text" name="comentarios" value="{{comentarios}}" required placeholder="comentario" />
+                </div>
+
+                <div id="fecha_puclicacion">
+                    <label >fecha publicacion:</label>
+                    <input type="text" name="fecha_publicacion" value="{{fecha_publicacion}}" required placeholder="ingrese la fecha_publicacion" />
+                </div>
+                <!-- boton de actualizar -->
+                <div id="boton">
+                    <button type="submit">Actualizar</button>
+                </div>
+
+            </form>
+        {{/each }}
+    </div>

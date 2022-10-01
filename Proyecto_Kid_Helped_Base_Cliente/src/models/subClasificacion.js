@@ -5,10 +5,8 @@ const subClasificacion=(sequelize,type)=>{
             primaryKey:true,
             autoIncrement:true
         },
-        id_subclasificacion:type.STRING(99),
-        nombre:type.STRING(99),
-        detalle:type.STRING(99),
-        correoid_clasificacion:type.STRING(99),
+        nombre:type.STRING,
+        detalle:type.STRING,
 
 
         creacionsubclasificacion: {
