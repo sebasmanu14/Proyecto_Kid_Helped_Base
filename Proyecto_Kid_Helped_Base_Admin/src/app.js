@@ -12,7 +12,7 @@ const fileupload = require("express-fileupload");
 const {database}=require('./keys')
 
 //Inicializacion
-const app = express();  
+const app = express();    
 require('./lib/passport')
 
 const handlebars=exphbs.create({
