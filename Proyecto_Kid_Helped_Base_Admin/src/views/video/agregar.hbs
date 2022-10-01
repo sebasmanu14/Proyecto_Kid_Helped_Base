@@ -1,29 +1,31 @@
 <link rel="stylesheet" href="/css/video/agregar.css">
 
-<div id="container">
+<div id="contenedor">
+    <form action="/video/agregar/{{user.id_usuario}}" method="post">
+    <div id="titulo">
+        <p>Agregar URL</p>
+    </div>
+    <div id="url">
+        <label>Url del video:</label>
+        <input type="text" name="url" required placeholder="ingrese">
+    </div>
+    <div id="descripcion">
+        <label>Descripcion del video:</label>
+        <input type="text" name="descripcion" required placeholder="ingrese">
+    </div>
 
-<form action="/video/agregar"{{user.id_capacitacion}} method="post">
-<div id="video">
-    <label>Nombre del video de URL:</label>
-    <input type="text" name="url">
-</div>
+    <div id="titulo">
+        <label>Titulo del video:</label>
+        <input type="text" name="titulo" required placeholder="ingrese">
+    </div>
 
-<div id="descripcion">
-    <label>Descripcion del video:</label>
-    <input type="text" name="descripcion">
-</div>
+    <div id="descripcion">
+        <label>Tipo de video:</label>
+        <input type="text" name="tipo" required placeholder="ingrese">
+    </div>
 
-<div id="titulo">
-    <label>Titulo del Video:</label>
-    <input type="text" name="titulo">
+    <div id="boton">
+        <button type="submit">GUARDAR</button>
+    </div>
+    </form>
 </div>
-
-<div id="tipo">
-    <label>Tipo de Video:</label>
-    <input type="text" name="titulo">
-</div>
-<div id="boton">
-    <button type="submit">Guardar</button>
-</div>
-</div>
-</form>

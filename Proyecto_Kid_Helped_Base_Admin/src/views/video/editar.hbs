@@ -1,31 +1,32 @@
-<link rel="stylesheet" href="/css/video/agregar.css">
-
-<div id="container">
+<link rel="stylesheet" href="/css/video/editar.css">
+<div id="contenedor">
     {{#each lista}}
-
-    <form action="/video/editar" method="post">
+    <form action="/video/editar/{{id_video}}" method="post">
+    <div id="titulo">
+        <p>Agregar Video</p>
+    </div>
     <div id="url">
-    <label>Nombre del video de URL:</label>
-    <input type="text" name="url">
-</div>
+        <label>Url:</label>
+        <input type="text" name="url" value="{{url}}" required placeholder="ingrese ">
+    </div>
+    <div id="descripcion">
+        <label>Descripcion del Video:</label>
+        <input type="text" name="descripcion" value="{{descripcion}}" required placeholder="ingrese ">
+    </div>
 
-<div id="descripcion">
-    <label>Descripcion del video:</label>
-    <input type="text" name="descripcion">
-</div>
+    <div id="titulo">
+        <label>Titulo Video:</label>
+        <input type="text" name="titulo" value="{{titulo}}" required  placeholder="ingrese ">
+    </div>
 
-<div id="titulo">
-    <label>Titulo del Video:</label>
-    <input type="text" name="titulo">
-</div>
+    <div id="tipo">
+        <label>Tipo Video:</label>
+        <input type="text" name="tipo" value="{{tipo}}" required placeholder="ingrese ">
+    </div>
 
-<div id="tipo">
-    <label>Tipo de Video:</label>
-    <input type="text" name="titulo">
-</div>
-<div id="boton">
-    <button type="submit">Actualizar</button>
-</div>
+    <div id="boton">
+        <button type="submit">Actualizar</button>
+    </div>
     </form>
-{{/each}}
+    {{/each}}
 </div>

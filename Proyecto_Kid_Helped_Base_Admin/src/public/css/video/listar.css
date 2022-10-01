@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #454546;
+}
+
+.background {
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+
+.bloque {
+    border: 1px solid #000;
+    width: 80%;
+    display: inline-block;
+    font-size: 18px;
+    padding: 30px;
+    position: center;
+}
