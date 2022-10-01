@@ -27,7 +27,7 @@ capacitacionCtl.listar=async(req,res)=>{
 //traer datos
 capacitacionCtl.traer=async(req,res)=>{
     const ids=req.params.id
-    const lista =await sql.query('select * from tipoCapacitaciones where id_tipoCapacitaciones =?',[ids])
+    const lista =await sql.query('select * from tipoCapacitaciones where id_tipoCapacitacion =?',[ids])
     res.render('tipoCapacitacion/editar',{lista})
 }
 
@@ -39,7 +39,7 @@ capacitacionCtl.actualizar=async(req,res)=>{
         nombre,
         estado
     }
-    await orm.tipoCapacitacion.findOne({where:{id_tipoCapacitaciones:ids}})
+    await orm.tipoCapacitacion.findOne({where:{id_tipoCapacitacion:ids}})
     .then(actualizar=>{
         actualizar.update(nuevoEnvio)
     })
@@ -49,7 +49,7 @@ capacitacionCtl.actualizar=async(req,res)=>{
  capacitacionCtl.eliminar= async(req,res) =>{
     const ids= req.params.id
     const id =req.user.id_usuario
-    await orm.tipoCapacitacion.destroy({where:{id_tipoCapacitaciones:ids}})
+    await orm.tipoCapacitacion.destroy({where:{id_tipoCapacitacion:ids}})
     .then(()=>{
     req.flash('success','Eliminado exitosamente')
     res.redirect('/tipoCapacitacion/listar/'+id);   
