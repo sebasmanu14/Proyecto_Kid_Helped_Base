@@ -11,10 +11,12 @@
 	--color_shadow:#00000033; 
 }
 
-body{
-    background-color: black;
+#body{
+    background-color: rgb(5, 59, 64);
 	font-family: 'Roboto', sans-serif;
     color: white;
+
+	
 }
 
 *{
@@ -26,6 +28,14 @@ body{
 
 
 #container{
+	width: 90%;
+	max-width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 100px 0;
+	height: auto;
+}
+#container-f{
 	width: 90%;
 	max-width: 1200px;
 	margin: 0 auto;
@@ -101,18 +111,18 @@ nav ul li a:hover::before {
 #container--modifire{
 	width: 60%;
 }
-.hero{
+#hero{
 	width: 100%;
 	min-height:100vh;
 	background: linear-gradient(180deg,#00000C 0% ,#1a1b1f 100%); 
 }
-.nav__hero{
+#nav__hero{
 	color: #fff;
 	height: 70px;
 	border-bottom: 1px solid rgba(255,255,255,0.1);
 
 }
-.nav__container{
+#nav__container{
 	display:flex;
 	align-items: center;
 	justify-content: space-between;
@@ -153,6 +163,11 @@ nav ul li a:hover::before {
 	align-items: center;
 	padding: 0;
 }
+#hero{
+	width: 100%
+	min-height:100vh;
+	background: linear-gradient(180deg,#00000C 0% ,#1a1b1f 100%); 
+}
 #title{
 	font-size:56px;
 	font-weight:300;
@@ -189,14 +204,41 @@ nav ul li a:hover::before {
 }
 #subtitle {
 	font-size: 42px;
+	color: #000;
+}
+#subtitle-v {
+	font-size: 42px;
+	color: rgb(255, 255, 255);
+}
+#subtitle-a {
+	font-size: 42px;
+	color: rgb(255, 255, 255);
 }
 
 #subtitle--modifirre {
 	text-align: center;
 	margin-bottom: 16px;
 }
+#subtitle--modifirre-f {
+	text-align: center;
+	margin-bottom: 16px;
+}
 #copy__section{
 	color: var(--black2);
+	font-size: 22px;
+	line-height: 32px;
+	margin-bottom: 60px;
+    padding: 15px;
+}
+#copy__section-v{
+	color: white;
+	font-size: 22px;
+	line-height: 32px;
+	margin-bottom: 60px;
+    padding: 15px;
+}
+#copy__section-a{
+	color: white;
 	font-size: 22px;
 	line-height: 32px;
 	margin-bottom: 60px;
@@ -306,7 +348,7 @@ nav ul li a:hover::before {
 }
 #testimonios{
 	background: #fafafa;
-	background-image: url(./img/index/fondokid.jpg);
+	background-image: url(https://i.pinimg.com/originals/9f/99/66/9f996626135ea0506d5e3de41a70e0db.jpg);
 }
 #testimonios-container{
 	display: flex;
@@ -406,8 +448,4 @@ nav ul li a:hover::before {
 	padding:60px 0;
 	text-align: center;
 	background: linear-gradient(180deg,#00000C 0% ,#1a1b1f 100%);
-}
-#body{
-	
-	background-image: url(./img/index/fondo1.jpg);
 }
