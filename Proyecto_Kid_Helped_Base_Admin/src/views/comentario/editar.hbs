@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="/css/video/editar.css">
+<div id="contenedor">
+
+    {{#each lista}}
+    <form action="/comentario/editar/{{id_comentario}}" method="post">
+        <div id="titulo">
+            <h2>Editar comentario</h2>
+        </div>
+        <div id="creacioncomentario">
+            <label>Edita el comentario:</label>
+            <input type="text" name="creacioncomentario" value="{{creacioncomentario}}" required>
+        </div>
+
+        <div id="actualizarcomentario">
+            <label>Verifica el nuevo comentario:</label>
+            <input type="text" name="actualizarcomentario" value="{{actualizarcomentario}}" required>
+        </div>
+        <div id="boton">
+            <button type="submit">Actualizar</button>
+        </div>
+    </form>
+    {{/each}}
+</div>

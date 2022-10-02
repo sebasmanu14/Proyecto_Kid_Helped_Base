@@ -7,7 +7,6 @@ const comentario=(sequelize,type)=>{
         },
         comentario:type.STRING(3000),
         fecha_puclicacion:type.STRING,
-        
 
 
         creacioncomentario: {

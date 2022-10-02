@@ -59,11 +59,9 @@ app.use('/tipoCapacitacion',require('./routes/tipocapacitacion.router'))
 app.use('/video',require('./routes/video.router'))
 app.use('/clasificacion',require('./routes/clasificacion.router'))
 app.use('/subclasificacion',require('./routes/subclasificacion.router'))
-<<<<<<< HEAD
 app.use('/objetivo',require('./routes/objetivo.router'))
-=======
 app.use('/actividad', require('./routes/actividad.router'))
 app.use('/videoActividad', require('./routes/videoActividad.router'))
->>>>>>> 66201cfb3a2d09eef38be5e7ccb979e7a4338c38
+app.use('/comentario', require('./routes/comentario.router'))
 module.exports=app
 
