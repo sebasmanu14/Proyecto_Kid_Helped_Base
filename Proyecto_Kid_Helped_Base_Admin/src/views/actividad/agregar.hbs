@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/css/active/actividad.css">
+<div id="container">
+    <form action="/actividad/agregar/{{user.id_usuario}}" method="post">
+        <div id="titulo">
+            <h2>Nuevas Actividades</h2>
+        </div>
+        <div id="nombreActividad">
+            <label>Nombre de la Actividad:</label>
+
+            <input type="text" name="nombreActividad" required>
+        </div>
+
+        <div id="descripcion">
+            <label>Agrega la descripcion de la actividad:</label>
+
+            <input type="text" name="descripcion" required>
+        </div>
+
+        <div id="urlActividad">
+            <label>Agregar Imagen de la actividad:</label>
+
+            <input type="text" name="urlActividad" required>
+        </div>
+
+        <div id="boton">
+            <button type="submit" id="">Guardar</button>
+        </div>
+    </form>

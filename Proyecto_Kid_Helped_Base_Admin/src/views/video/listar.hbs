@@ -7,35 +7,31 @@
 
             <div class="row">
 
-            
-            {{#each lista}}
-            
-                <div id="id_video">
-                    <p>{{url}}</p>
-                </div>
+                {{#each lista}}
+                
+                    <div id="id_video">
+                        <h3 style="text-align:center" >DESCRIPCIÓN - TABLA</h3>
+                        <p>{{url}}</p>
+                    </div>
+       
+                    <div id="descripcion">
+                        <p>{{descripcion}}</p>
+                    </div>
+                    <div id="tipo">
+                        <p>{{tipo}}</p>
+                    </div>
+           
 
-                    <br>
+                    <div id="boton">
+                        <a href="/video/editar/{{id_video}}"><button type="button">Editar</button></a> 
+                    </div>
 
-                <div id="descripcion">
-                    <p>{{descripcion}}</p>
-                </div>
-
-                <div id="tipo">
-                    <p>{{tipo}}</p>
-                </div>
-
-                <br>
-                <div id="boton">
-                    <a href="/video/editar/{{id_video}}"><button type="button">Editar</button></a> 
-                </div>
-                <br>
-
-                <div id="eliminar">
-                <a href="/video/eliminar/{{id_video}}" ><button type="button">Eliminar</button></a> 
-                </div>
-
-            
-            {{/each }}
+                    <div id="eliminar">
+                    <a href="/video/eliminar/{{id_video}}" ><button type="button">Eliminar</button></a> 
+                    </div>
+<br><br>
+                
+                {{/each }}
             </div>
     </div>
 </form>

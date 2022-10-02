@@ -1,14 +1,14 @@
-const videoCtl = {}
+const videoActividadCtl = {}
 const orm = require('../conf/dataBase.orm')
 const sql = require('../conf/database.sql')
 
-videoCtl.mostrar = (req, res) => {
-    res.render('video/agregar');
+videoActividadCtl.mostrar = (req, res) => {
+    res.render('videoActividad/agregar');
 }
 
 //mandar
-videoCtl.mandar = async (req, res) => {
-    const id = req.user.id_capacitacion
+videoActividadCtl.mandar = async (req, res) => {
+    const id = req.user.id_actividad
     const { url, descripcion, titulo, tipo } = req.body
     const nuevoEnvio = {
         url,
@@ -18,23 +18,23 @@ videoCtl.mandar = async (req, res) => {
     }
     await orm.video.create(nuevoEnvio)
     req.flash('success', 'Guardado exitosamente')
-    res.redirect('/video/listar/' + id)
+    res.redirect('/videoActividad/listar/' + id)
 }
 
-videoCtl.listar = async (req, res) => {
+videoActividadCtl.listar = async (req, res) => {
     const lista = await sql.query('select * from videos')
-    res.render('video/listar', { lista })
+    res.render('videoActividad/listar', { lista })
 }
 
 //traer datos
-videoCtl.traer = async (req, res) => {
+videoActividadCtl.traer = async (req, res) => {
     const ids = req.params.id
     const lista = await sql.query('select * from videos where id_video =?', [ids])
-    res.render('video/editar', { lista })
+    res.render('videoActividad/editar', { lista })
 }
 
-videoCtl.actualizar = async (req, res) => {
-    const id = req.user.id_capacitacion
+videoActividadCtl.actualizar = async (req, res) => {
+    const id = req.user.id_actividad
     const ids = req.params.id
     const { url, descripcion, titulo, tipo } = req.body
     const nuevoEnvio = {
@@ -50,15 +50,15 @@ videoCtl.actualizar = async (req, res) => {
     req.flash('success', 'Actualizado exitosamente')
     res.redirect('/video/listar/' + id);
 }
-videoCtl.eliminar = async (req, res) => {
+videoActividadCtl.eliminar = async (req, res) => {
     const ids = req.params.id
-    const id = req.user.id_usuario
+    const id = req.user.id_actividad
     await orm.video.destroy({ where: { id_video: ids } })
         .then(() => {
             req.flash('success', 'Eliminado exitosamente')
-            res.redirect('/video/listar/' + id);
+            res.redirect('/videoActividad/listar/' + id);
         })
 }
 
 
-module.exports = videoCtl
+module.exports = videoActividadCtl

@@ -1,20 +1,19 @@
-<link rel="stylesheet" href="/css/clacificacion/editar.css">
+<link rel="stylesheet" href="/css/video/editar.css">
 <div id="contenedor">
+
     {{#each lista}}
     <form action="/clasificacion/editar/{{id_clasificacion}}" method="post">
     <div id="titulo">
-        <p>Agregar la clacificacion</p>
+        <h2>Agregar la clasificación</h2>
     </div>
     <div id="nombre">
-        <label>Nombre de la clacificacion:</label>
+        <label>Nombre de la clacificación:</label>
         <input type="text" name="nombre" value="{{nombre}}" required placeholder="Nombre de la clasificacion" />
     </div>
     <div id="detalle">
-        <label>Detalle de la clasificacion:</label>
+        <label>Detalle de la clasificación:</label>
         <input type="text" name="detalle" value="{{detalle}}" required placeholder="ingrese la clasificacion" />
     </div>
-
-    
     <div id="boton">
         <button type="submit">Actualizar</button>
     </div>
