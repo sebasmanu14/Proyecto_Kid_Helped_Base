@@ -6,11 +6,11 @@
 }
 
 body {
-    background: #334d50;
+    background: #373B44;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #cbcaa5, #334d50);
+    background: -webkit-linear-gradient(to right, #4286f4, #373B44);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #cbcaa5, #334d50);
+    background: linear-gradient(to right, #4286f4, #373B44);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
@@ -81,7 +81,7 @@ label {
 
 input {
     display: block;
-    height: 28px;
+    height: 29px;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.07);
     border-radius: 3px;
@@ -92,7 +92,7 @@ input {
 }
 
 ::placeholder {
-    color: #e5e5e5;
+    color: #000000;
 }
 
 button {

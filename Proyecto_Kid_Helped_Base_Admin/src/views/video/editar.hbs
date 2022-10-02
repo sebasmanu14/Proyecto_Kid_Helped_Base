@@ -1,32 +1,32 @@
 <link rel="stylesheet" href="/css/video/editar.css">
-<div id="contenedor">
-    {{#each lista}}
-    <form action="/video/editar/{{id_video}}" method="post">
-    <div id="titulo">
-        <h2>Actualizar Video</h2>
-    </div>
-    <div id="url">
-        <label>Url:</label>
-        <input type="text" name="url" value="{{url}}" required>
-    </div>
-    <div id="descripcion">
-        <label>Descripcion del Video:</label>
-        <input type="text" name="descripcion" value="{{descripcion}}" required>
-    </div>
+    <div id="contenedor">
+        {{#each lista}}
+            <form action="/video/editar/{{id_video}}" method="post">
+                <div id="titulo">
+                    <h2>Actualizar Video</h2>
+                </div>
+                <div id="url">
+                    <label>Url:</label>
+                    <input type="text" name="url" value="{{url}}" required>
+                </div>
+                <div id="descripcion">
+                    <label>Descripcion del Video:</label>
+                    <input type="text" name="descripcion" value="{{descripcion}}" required>
+                </div>
 
-    <div id="titulo">
-        <label>Titulo Video:</label>
-        <input type="text" name="titulo" value="{{titulo}}" required>
-    </div>
+                <div id="titulo">
+                    <label>Titulo Video:</label>
+                    <input type="text" name="titulo" value="{{titulo}}" required>
+                </div>
 
-    <div id="tipo">
-        <label>Tipo Video:</label>
-        <input type="text" name="tipo" value="{{tipo}}" required>
-    </div>
+                <div id="tipo">
+                    <label>Tipo Video:</label>
+                    <input type="text" name="tipo" value="{{tipo}}" required>
+                </div>
 
-    <div id="boton">
-        <button type="submit">Actualizar</button>
+                <div id="boton">
+                    <button type="submit">Actualizar</button>
+                </div>
+            </form>
+        {{/each}}
     </div>
-    </form>
-    {{/each}}
-</div>
