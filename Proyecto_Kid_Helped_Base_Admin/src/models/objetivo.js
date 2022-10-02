@@ -4,7 +4,7 @@ const { INTEGER, Sequelize } = require("sequelize");
 
 const objetivo = (sequelize, type) => {
   return sequelize.define(
-    "objetivo",
+    "objetivos",
     {
       id_objetivo: {
         type: type.INTEGER,

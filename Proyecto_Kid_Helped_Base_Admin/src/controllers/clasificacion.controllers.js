@@ -34,7 +34,7 @@ clasificacionCtl.traer=async(req,res)=>{
 clasificacionCtl.actualizar=async(req,res)=>{
     const id =req.user.id_clasificacion
     const ids=req.params.id
-    const {nombre,detalle}=req.body
+    const {nombre, detalle}=req.body
     const nuevoEnvio={
         nombre,
         detalle
