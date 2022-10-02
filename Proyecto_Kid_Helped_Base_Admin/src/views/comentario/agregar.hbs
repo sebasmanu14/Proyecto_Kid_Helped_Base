@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="/css/video/agregar.css"><!--/css/capacitacion/agregarcapa.css-->
+
+<!-- crud-->
+   <div id="container__iniciar__session">
+
+    <form action="/comentario/agregar/{{user.id_video}}" method="post">
+
+        <div id="titulo">
+            <h3 >Agregar Comentario del Video</h3>
+        </div>
+
+        <div id="nombres">
+            <label >Agregar comentario del Video:</label>
+            <input type="text" name="comentario" required placeholder="Nombre de la capacitación" />
+        </div>
+
+        <div id="descripcion">
+            <label >Descripción:</label>
+            <input type="text" name="fecha_puclicacion" required placeholder="ingrese la debida descripción" />
+        </div>
+       
+        <div id="estado">
+            <label >Estado de la Capacitacion:</label>
+            <input type="text" name="estado" required placeholder="ingrese el estado de la capacitacion" />
+        </div>
+
+        <div id="boton">
+            <button type="submit" id="">Guardar</button>
+        </div>
+
+    </form>
+
+<script src="/js/fecha.js"></script>
