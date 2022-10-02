@@ -64,5 +64,6 @@ app.use('/objetivo', require('./routes/objetivo.router'))
 app.use('/actividad', require('./routes/actividad.router'))
 app.use('/videoActividad', require('./routes/videoActividad.router'))
 app.use('/comentario', require('./routes/comentario.router'))
+app.use('/respuestaComentario', require('./routes/respuestaComentario.router'))
 module.exports = app
 
