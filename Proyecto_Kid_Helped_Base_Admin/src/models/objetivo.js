@@ -1,6 +1,3 @@
-const { timeStamp } = require("console");
-const { type } = require("os");
-const { INTEGER, Sequelize } = require("sequelize");
 
 const objetivo = (sequelize, type) => {
   return sequelize.define(
@@ -8,10 +5,10 @@ const objetivo = (sequelize, type) => {
     {
       id_objetivo: {
         type: type.INTEGER,
-        PrimaryKey: true,
-        autoIncement: true,
+        primaryKey: true,
+        autoIncrement: true, 
       },
-      objetivos: type.STRING(3000),
+      objetivo: type.STRING(3000),
       redesSociales: type.STRING,
 
       creacionObjetivo: {
