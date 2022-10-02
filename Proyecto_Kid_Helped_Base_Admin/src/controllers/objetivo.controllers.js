@@ -4,14 +4,14 @@ const sql=require('../conf/database.sql')
 
 objetivoCtl.mostrar=(req,res)=>{
     res.render('objetivo/agregar');
-}
-
+} 
+ 
 //mandar
 objetivoCtl.mandar=async(req,res)=>{
     const id =req.user.id_usuario
-    const {objetivos,redesSociales}=req.body
+    const {objetivo,redesSociales}=req.body
     const nuevoEnvio={
-        objetivos,
+        objetivo,
         redesSociales
     }
     await orm.objetivo.create(nuevoEnvio)
@@ -34,9 +34,9 @@ objetivoCtl.traer=async(req,res)=>{
 objetivoCtl.actualizar=async(req,res)=>{
     const id =req.user.id_usuario
     const ids=req.params.id
-    const {objetivos, redesSociales}=req.body
+    const {objetivo, redesSociales}=req.body
     const nuevoEnvio={
-        objetivos,
+        objetivo,
         redesSociales
        
     }
