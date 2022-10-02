@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="/css/video/listar.css"/>
+
+
+<!-- tablas-->
+<form action="/video/listar/{{user.id_capacitacion}}" method="get">
+    <div id="container">
+
+            <div class="row">
+
+                {{#each lista}}
+                
+                    <div id="id_video">
+                        <h3 style="text-align:center" >DESCRIPCIÓN - TABLA</h3>
+                        <p><strong>Url</strong> <br>{{url}}</p>
+                    </div>
+       
+                    <div id="descripcion">
+                        <p><strong>descripción</strong> <br>{{descripcion}}</p>
+                    </div>
+                    <div id="tipo">
+                        <p><strong>Tipo</strong> <br>{{tipo}}</p>
+                    </div>
+           
+
+                    <div id="boton">
+                        <a href="/video/editar/{{id_video}}"><button type="button">Editar</button></a> 
+                    </div>
+
+                    <div id="eliminar">
+                    <a href="/video/eliminar/{{id_video}}" ><button type="button">Eliminar</button></a> 
+                    </div>
+<br><br>
+                
+                {{/each }}
+            </div>
+    </div>
+</form>

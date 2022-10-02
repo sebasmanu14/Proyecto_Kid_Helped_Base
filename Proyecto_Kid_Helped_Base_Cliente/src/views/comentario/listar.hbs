@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="/css/comentario/listarcomentario.css"/>
+
+<!-- tablas-->
+<form action="/comentario/listar/{{user.id_cliente}}" method="get">
+    <div id="container">
+
+            <div id="background">
+
+            
+            {{#each lista}}
+            
+                <div id="name" id="id_comentario">
+                   <div id="bloque">{{comentario}}</div> 
+                </div>
+
+                    <br>
+
+                <div id="codigo">
+                    <div id="bloque">{{fecha_publicacion}}</div> 
+                </div>
+
+                <br>
+                <div id="boton">
+                    <a href="/comentario/editar/{{id_comentario}}"><button type="button">Editar</button></a> 
+                </div>
+                <br>
+
+                <div id="eliminar">
+                <a href="/comentario/eliminar/{{id_comentario}}" ><button type="button">Eliminar</button></a> 
+                </div>
+
+            
+            {{/each }}
+            </div>
+    </div>
+</form>

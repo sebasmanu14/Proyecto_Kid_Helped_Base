@@ -7,7 +7,6 @@ const subClasificacion=(sequelize,type)=>{
         },
         nombre:type.STRING,
         detalle:type.STRING,
-        correoid_clasificacion:type.STRING,
 
 
         creacionsubclasificacion: {

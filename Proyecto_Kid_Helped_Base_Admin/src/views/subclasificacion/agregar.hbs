@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/css/video/agregar.css">
+
+<div id="contenedor">
+    <form action="/subclasificacion/agregar/{{user.id_usuario}}" method="post">
+    <div id="titulo">
+        <h3>Agregar Nombre de Sub - clasificacion</h3>
+    </div>
+    <div id="nombre">
+        <label>Nombre de la Sub - clasificacion:</label>
+        <input type="text" name="nombre" required  placeholder=" ingrese nombre ">
+    </div>
+    <div id="detalle">
+        <label>Descripción de la Sub - clasificacion:</label>
+        <input type="text" name="detalle" required placeholder=" ingrese descripción">
+    </div>
+
+    <div id="boton">
+        <button type="submit">GUARDAR</button>
+    </div>
+    </form>
+</div>

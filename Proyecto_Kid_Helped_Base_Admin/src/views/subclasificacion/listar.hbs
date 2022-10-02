@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="/css/video/listar.css"/>
+
+
+<!-- tablas-->
+<form action="/subclasificacion/listar/{{user.id_subclasificacion}}" method="get">
+    <div id="container">
+
+            <div class="row">
+   
+            {{#each lista}}
+            
+                <div id="id_subclasificacion">
+                    <h3 style="text-align:center" >DESCRIPCIÓN - TABLA</h3>
+                    <p><strong>Nombre</strong> <br>{{nombre}}</p>
+                </div>
+
+                    <br>
+
+                <div id="detalle">
+                    <p><strong>Detalle</strong> <br>{{detalle}}</p>
+                </div>
+
+                <br>
+                <div id="boton">
+                    <a href="/subclasificacion/editar/{{id_subclasificacion}}"><button type="button">Editar</button></a> 
+                </div>
+                <br>
+
+                <div id="eliminar">
+                <a href="/subclasificacion/eliminar/{{id_subclasificacion}}" ><button type="button">Eliminar</button></a> 
+                </div>
+
+ <br><br>
+           
+            {{/each }}
+            </div>
+    </div>
+</form>

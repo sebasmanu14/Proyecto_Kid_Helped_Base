@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="/css/comentario/comentario.css">
+<!--nav-->
+<div class="nav">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <div class="nav-title">
+      KiD-HELPED
+    </div>
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="nav-links">
+    <a href="" target="_blank">Comentarios</a>
+    <a href="" target="_blank">Adultos Mayores</a>
+    <a href="" target="_blank">Videos</a>
+    <a href="" target="_blank">Actividades</a>
+    <a href="/login" target="_blank">Cerrar Sesion</a>
+  </div>
+</div>
+<!-- crud-->
+   <div id="container__iniciar__session">
+
+    <form action="/comentario/agregar/{{user.id_cliente}}" method="post">
+
+        <div id="titulo">
+            <h3 >Agregar un Comentario</h3>
+        </div>
+
+        <div id="comentario">
+            <label >Comentario:</label>
+            <input type="text" name="comentario" required placeholder="comentario" />
+        </div>
+
+        <div id="fecha_publicacion">
+            <label >Fecha publicacion:</label>
+            <input id="fechas" readonly name="fecha_publicacion" required placeholder="ingrese la fecha publicacion" />
+        </div>
+
+        <div id="boton">
+            <button type="submit" id="">Comentar</button>
+        </div>
+
+    </form>
+
+<script src="/js/fecha.js"></script>

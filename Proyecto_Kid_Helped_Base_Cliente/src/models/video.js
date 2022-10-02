@@ -1,12 +1,9 @@
-const { timeStamp } = require("console");
-const { type } = require("os");
-const { INTEGER, Sequelize } = require("sequelize");
 
 const video = (sequelize, type) => {
   return sequelize.define(
     "videos",
     {
-      id_videos: {
+      id_video: {
         type: type.INTEGER,
         primaryKey: true,
         autoIncrement: true,
@@ -16,13 +13,13 @@ const video = (sequelize, type) => {
       titulo: type.STRING,
       tipo: type.STRING,
 
-      creacionVideo: {
+      creacionvideo: {
         type: "TIMESTAMP",
         defaultValue: type.literal("CURRENT_TIMESTAMP"),
         allowNull: false,
       },
 
-      actualizacionVideo: {
+      actualizacionvideo: {
         type: "TIMESTAMP",
         defaultValue: type.literal("CURRENT_TIMESTAMP"),
         allowNull: false,

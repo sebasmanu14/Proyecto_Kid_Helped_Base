@@ -112,6 +112,9 @@ capacitacion.hasMany(video);
 video.belongsTo(capacitacion);
 actividad.hasMany(video);
 video.belongsTo(actividad)
+video.hasMany(comentario);
+comentario.belongsTo(video)
+
 
 module.exports = {
   actividad,

@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="/css/objetivo/listar.css" />
+
+
+<!-- tablas-->
+<form action="/respuestaComentario/listar/{{user.id_usuario}}" method="get">
+    <div id="container">
+
+        <div class="row">
+
+
+            {{#each lista}}
+
+            <div id="creacionrespuestaComentario">
+                <p>{{creacionrespuestaComentario}}</p>
+            </div>
+
+            <br>
+
+            <div id="actualizarrespuestaComentario">
+                <p>{{actualizarrespuestaComentario}}</p>
+            </div>
+
+
+            <br>
+            <div id="boton">
+                <a href="/respuestaComentario/editar/{{id_respuestaComentario}}"><button
+                        type="button">Editar</button></a>
+            </div>
+            <br>
+
+            <div id="eliminar">
+                <a href="/respuestaComentario/eliminar/{{id_respuestaComentario}}"><button
+                        type="button">Eliminar</button></a>
+            </div>
+
+
+            {{/each }}
+        </div>
+    </div>
+</form>

@@ -1,20 +1,26 @@
-<link rel="stylesheet" href="/css/tipoCapa/agregarcapa.css">
-<div id="container">
-    
+<link rel="stylesheet" href="/css/video/agregar.css"><!--/css/capacitacion/agregarcapa.css-->
+
+   <!-- crud-->
+   <div id="container">
+
     <form action="/tipoCapacitacion/agregar/{{user.id_usuario}}" method="post">
-    <div id="titulo">
-        <p>Agregar Tipo de Capacitacion</p>
-    </div>
-    <div id="nombres">
-        <label>Nombre de Capacitacion:</label>
-        <input type="text" name="nombre"required>
-    </div>
-     <div id="estado">
-        <label>Estado:</label>
-        <input type="text" name="estado"required>
-    </div>
-     
-    <div id="boton">
-    <button type="submit" id="">Guardar</button>
-    </div>
-   </form>
+
+        <div id="titulo">
+            <h3 >Agregar tipo de capacitación</h3>
+        </div>
+
+        <div id="nombres">
+            <label >Nombre de capacitacion:</label>
+            <input type="text" name="nombre" required placeholder="Nombre de la capacitación." />
+        </div>
+
+        <div id="estado">
+            <label >Descripción:</label>
+            <input type="text" name="estado" required placeholder="ingrese la debida descripción." />
+        </div>
+
+        <div id="boton">
+            <button type="submit" id="">Guardar</button>
+        </div>
+
+    </form>

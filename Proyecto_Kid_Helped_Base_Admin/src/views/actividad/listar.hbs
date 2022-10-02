@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="/css/video/listar.css">
+<form action="/actividad/listar/{{user.id_usuario}}" method="get">
+    <div id="container">
+        <div class="row">
+
+            {{#each lista}}
+
+            <div id="tarjeta">
+                <div id="id_actividad">
+                    <h3 style="text-align:center" >DESCRIPCIÓN - TABLA</h3>
+                    <p> <strong>Nombre de actividad</strong> <br>{{nombreActividad}}</p>
+                </div>
+                <div id="codigo">
+                    <p><strong>Descripción</strong> <br>{{descripcion}}</p>
+                </div>
+                <div id="img">
+                    <p><strong>Url de actividad</strong> <br>{{urlActividad}}</p>
+                </div>
+
+                <div id="boton">
+                    <div id="editar">
+                        <a href="/actividad/editar/{{id_actividad}}"><button type="button">Editar</button></a>
+                    </div>
+
+                    <div id="eliminar">
+                        <a href="/actividad/eliminar/{{id_actividad}}"><button type="button">Eliminar</button></a>
+                    </div>
+                </div>
+                <br><br>
+            </div>
+            {{/each }}
+        </div>
+    </div>
+</form>

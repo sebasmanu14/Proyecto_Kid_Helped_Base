@@ -6,7 +6,12 @@
 }
 
 body {
-    background-color: #080710;
+    background: #3a6186;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #89253e, #3a6186);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #89253e, #3a6186);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .background {
@@ -23,18 +28,6 @@ body {
     width: 200px;
     position: absolute;
     border-radius: 50%;
-}
-
-.shape:first-child {
-    background: linear-gradient( #1845ad, #23a2f6);
-    left: -80px;
-    top: -80px;
-}
-
-.shape:last-child {
-    background: linear-gradient( to right, #ff512f, #f09819);
-    right: -30px;
-    bottom: -80px;
 }
 
 form {

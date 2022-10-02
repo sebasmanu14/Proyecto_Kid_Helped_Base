@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/css/video/agregar.css"><!--/css/capacitacion/agregarcapa.css-->
+
+   <!-- crud-->
+   <div id="container">
+
+    <form action="/clasificacion/agregar/{{user.id_usuario}}" method="post">
+
+        <div id="titulo">
+            <h3 >Agregar la clasificacion</h3>
+        </div>
+
+        <div id="nombre">
+            <label >Nombre de la clasificacion:</label>
+            <input type="text" name="nombre" required placeholder="Nombre de la clasificacion" />
+        </div>
+
+        <div id="detalle">
+            <label >Detalle:</label>
+            <input type="text" name="detalle" required placeholder="ingrese la clasificacion" />
+        </div>
+
+        <div id="boton">
+            <button type="submit" id="">Guardar</button>
+        </div>
+
+    </form>

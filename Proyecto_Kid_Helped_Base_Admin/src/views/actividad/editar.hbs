@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="/css/video/editar.css">
+<div id="container">
+    <div id="container">
+        {{#each lista}}
+
+        <form action="/actividad/editar/{{id_actividad}}" method="post">
+            <div id="titulo">
+                <h2>Actualizar Actividades</h2>
+            </div>
+
+            <div id="nombreActividad">
+                <label>Nombre de la actividad:</label>
+                <input type="text" name="nombreActividad" value="{{nombreActividad}}" required placeholder="ingrese actividad.">
+            </div>
+
+            <div id="descripcion">
+                <label>Agrega la actividad:</label>
+                <input type="text" name="descripcion" value="{{descripcion}}" required placeholder="ingrese actividad.">
+            </div>
+
+            <div id="urlActividad">
+                <label>Nueva url de la actividad:</label>
+                <input type="text" name="urlActividad" value="{{urlActividad}}" required placeholder="ingrese actividad.">
+            </div>
+
+            <div id="boton">
+                <button type="submit">Actualizar</button>
+        </form>
+        {{/each }}
+    </div>
