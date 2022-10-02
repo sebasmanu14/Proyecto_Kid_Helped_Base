@@ -1,25 +1,23 @@
-<link rel="stylesheet" href="/css/active/actividad.css">
+<link rel="stylesheet" href="/css/video/agregar.css">
 <div id="container">
     <form action="/actividad/agregar/{{user.id_usuario}}" method="post">
         <div id="titulo">
-            <h2>Nuevas Actividades</h2>
+            <h3>Nuevas Actividades</h3>
         </div>
         <div id="nombreActividad">
             <label>Nombre de la Actividad:</label>
 
-            <input type="text" name="nombreActividad" required>
+            <input type="text" name="nombreActividad" required placeholder="ingrese la actividad.">
         </div>
 
         <div id="descripcion">
             <label>Agrega la descripcion de la actividad:</label>
-
-            <input type="text" name="descripcion" required>
+            <input type="text" name="descripcion" required placeholder="ingrese la actividad.">
         </div>
 
         <div id="urlActividad">
             <label>Agregar Imagen de la actividad:</label>
-
-            <input type="text" name="urlActividad" required>
+            <input type="text" name="urlActividad" required placeholder="ingrese la actividad.">
         </div>
 
         <div id="boton">
