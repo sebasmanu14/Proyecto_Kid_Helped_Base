@@ -16,7 +16,7 @@ loginCtl.showRegister=(req,res)=>{
 }
 
 loginCtl.registro=passport.authenticate('local.signup',{
-    successRedirect: '/cierreSesion', 
+    successRedirect: '/login', 
     failureRedirect: '/registro',
     failureFlash: true
 })
