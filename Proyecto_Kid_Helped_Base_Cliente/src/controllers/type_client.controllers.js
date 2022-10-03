@@ -16,3 +16,4 @@ loginCtl.showTipo = (req, res) => {
 };
 
 module.exports = loginCtl;
+
