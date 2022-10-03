@@ -21,6 +21,15 @@ header{
     display: table;
 }
 
+.row {
+    width: 100%;
+    display: inline-block;
+    font-size: 20px;
+    padding: 60px;
+    position: center;
+    border-radius: 5px;
+}
+
 menu{
     width: 900px;
     margin: 0 auto;
@@ -69,13 +78,13 @@ nav ul li a:hover::before {
 
 /*   parte body*/
 
-img{
+#img{
     width: 200px;
     height: 200px;
     border-radius: 50%;
     transform: rotate(-90deg);
     object-fit: cover;
-    padding: 10px;
+    padding: 20px;
 }
 
 #titulo{
@@ -84,24 +93,31 @@ img{
 }
 
 #contenido {
-    display: flex;
+    display: center;
     margin: 60px;
 }
 
 #articulos {
-    width: 80%;
-    border-right: 3px solid white ;
+    width: 100%;
 }
 
 #secciones {
-    display: flex;
+    display: flex ;
     align-items: center;
-    padding: 10px;
+    padding: 2px 20px;
+    text-align: center;
 }
 
 #secciones h2{
     padding: 10px;
     text-align: center;
+}
+
+#secciones h3{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    margin: 1em auto ;
 }
 
 /*  progreso de porcentaje*/
@@ -117,7 +133,6 @@ img{
 #progress-bar{
     width: 200px;
     height: 20px;
-    background-color: gray;
     position: relative;
     top: 50%;
     bottom: 0;
@@ -125,31 +140,4 @@ img{
     right: 0;
     margin: auto;
     border-radius: 30px;
-}
-
-
-#loading{
-    width: 100px;
-    height: 25px;
-    font-size: 30px;
-    position: relative;
-    top: 60%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-}
-
-#progress{
-    width: 0%;
-    height: 100%;
-    background-color: limegreen;
-    border-radius: 30px;
-    animation: move 3s linear;
-}
-
-@keyframes move {
-    to{
-        width: 100%;
-    }
 }

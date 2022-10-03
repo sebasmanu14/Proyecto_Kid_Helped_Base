@@ -164,7 +164,7 @@ nav ul li a:hover::before {
 	padding: 0;
 }
 #hero{
-	width: 100%
+	width: 100%;
 	min-height:100vh;
 	background: linear-gradient(180deg,#00000C 0% ,#1a1b1f 100%); 
 }
