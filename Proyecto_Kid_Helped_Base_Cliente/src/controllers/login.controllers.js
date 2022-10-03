@@ -6,7 +6,7 @@ loginCtl.showLogin=(req,res)=>{
 }
 
 loginCtl.login=passport.authenticate('local.signin',{
-    successRedirect: '/comentario',
+    successRedirect: '/principal',
     failureRedirect: '/login',
     failureFlash: true
 })
@@ -16,7 +16,7 @@ loginCtl.showRegister=(req,res)=>{
 }
 
 loginCtl.registro=passport.authenticate('local.signup',{
-    successRedirect: '/cierreSesion', 
+    successRedirect: '/login', 
     failureRedirect: '/registro',
     failureFlash: true
 })
