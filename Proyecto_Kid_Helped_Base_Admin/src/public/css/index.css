@@ -1,4 +1,3 @@
-
 * {
     margin: 0px;
     padding: 0px;
@@ -10,7 +9,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-img{
+img {
     border-radius: 10%;
     align-items: center;
     width: 50%;
@@ -57,8 +56,6 @@ ol {
     top: 0px;
 }
 
-
-
 *,
 *:after,
 *:before {
@@ -74,3 +71,45 @@ body {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+#slider {
+    max-width: 1100px;
+    display: flex;
+}
+
+#slider #card {
+    flex: 1;
+    margin: 0 10px;
+    background: #fff;
+}
+
+#slider #card #img {
+    height: 200px;
+    width: 100%;
+}
+
+#slider #card #img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#slider #card #content {
+    padding: 10px 20px;
+}
+
+#card #content #title {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+#card #content #sub-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #e74c3c;
+    line-height: 20px;
+}
+
+#card #content p {
+    text-align: justify;
+    margin: 10px 0;
+}

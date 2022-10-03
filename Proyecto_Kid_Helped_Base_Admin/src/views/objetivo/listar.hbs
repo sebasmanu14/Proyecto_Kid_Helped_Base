@@ -11,27 +11,25 @@
             {{#each lista}}
             
                 <div id="objetivo">
-                    <p>{{objetivo}}</p>
+                    <h3 style="text-align:center" >DESCRIPCIÓN - TABLA</h3>
+                    <p><strong>Objetivo:</strong> <br>{{objetivo}}</p>
                 </div>
-
-                    <br>
 
                 <div id="redesSociales">
-                    <p>{{redesSociales}}</p>
+                    <p><strong>Red social:</strong> <br>{{redesSociales}}</p>
                 </div>
 
-
-                <br>
                 <div id="boton">
                     <a href="/objetivo/editar/{{id_objetivo}}"><button type="button">Editar</button></a> 
                 </div>
-                <br>
+                
 
                 <div id="eliminar">
                 <a href="/objetivo/eliminar/{{id_objetivo}}" ><button type="button">Eliminar</button></a> 
                 </div>
 
-            
+        <br><br>
+    
             {{/each }}
             </div>
     </div>
