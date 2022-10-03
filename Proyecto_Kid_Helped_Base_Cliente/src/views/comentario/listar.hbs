@@ -4,33 +4,30 @@
 <form action="/comentario/listar/{{user.id_cliente}}" method="get">
     <div id="container">
 
+        <div class="row">
             <div id="background">
 
-            
             {{#each lista}}
-            
+                <h3 style="text-align:center" >COMENTARIO</h3>
                 <div id="name" id="id_comentario">
                    <div id="bloque">{{comentario}}</div> 
                 </div>
-
-                    <br>
 
                 <div id="codigo">
                     <div id="bloque">{{fecha_publicacion}}</div> 
                 </div>
 
-                <br>
                 <div id="boton">
                     <a href="/comentario/editar/{{id_comentario}}"><button type="button">Editar</button></a> 
                 </div>
-                <br>
 
                 <div id="eliminar">
                 <a href="/comentario/eliminar/{{id_comentario}}" ><button type="button">Eliminar</button></a> 
                 </div>
 
-            
+   <br><br>         
             {{/each }}
             </div>
+        </div>
     </div>
 </form>
