@@ -1,28 +1,28 @@
 <link rel="stylesheet" href="/css/comentario/comentario.css">
 
 <!-- crud-->
-   <div id="container__iniciar__session">
+<div id="container__iniciar__session">
 
     <form action="/comentario/agregar/{{user.id_cliente}}" method="post">
 
         <div id="titulo">
-            <h3 >Agregar un Comentario</h3>
+            <h3>Agregar Comentario </h3>
         </div>
 
         <div id="comentario">
-            <label >Comentario</label>
-            <input type="text" name="comentario" required placeholder="Ingrese el comentario" />
+            <label>Agrega comentario:</label>
+            <input type="text" name="comentario" required placeholder="agrege comentario">
         </div>
 
-        <div id="fecha_publicacion">
-            <label >Fecha publicacion</label>
-            <input id="fechas" readonly name="fecha_publicacion" required/>
+        <div id="fecha_puclicacion">
+            <label>Fecha de publicacion:</label>
+            <input id="fechas" type="text" readonly name="fecha_puclicacion" required placeholder="fecha">
         </div>
 
         <div id="boton">
-            <button type="submit" id="">Comentar</button>
+            <button type="submit" id="">Guardar</button>
         </div>
 
     </form>
 
-<script src="/js/fecha.js"></script>
+    <script src="/js/fecha.js"></script>

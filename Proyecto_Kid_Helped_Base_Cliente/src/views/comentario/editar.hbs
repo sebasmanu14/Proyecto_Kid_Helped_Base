@@ -1,30 +1,28 @@
 <link rel="stylesheet" href="/css/comentario/editarcomentario.css">
 
-<!-- agregar - editar - boton -->
 
-   <div id="container">
-        {{#each lista}}
+<body>
+    <!-- agregar - editar - boton -->
+    {{#each lista}}
+    <form action="/comentario/editar/{{id_comentario}}" method="post">
+        <div id="titulo">
+            <h2>Editar comentario</h2>
+        </div>
+        <div id="comentario">
+            <label>Edita el comentario:</label>
+            <input type="text" name="comentario" value="{{comentario}}" required>
+        </div>
 
-            <form action="/comentario/editar/{{id_comentario}}" method="post">
-
-                <div id="titulo">
-                    <h2>Agregar Comentario</h2>
-                </div>
-
-                <div id="comentarios">
-                    <label >Comentarios</label>
-                    <input type="text" name="comentarios" value="{{comentarios}}" required placeholder="Actualizar el comentario" />
-                </div>
-
-                <div id="fecha_puclicacion">
-                    <label >Fecha publicación</label>
-                    <input type="text" name="fecha_publicacion" value="{{fecha_publicacion}}" required placeholder="Actualizar la fecha publicación" />
-                </div>
-                <!-- boton de actualizar -->
-                <div id="boton">
-                    <button type="submit">Actualizar</button>
-                </div>
-
-            </form>
-        {{/each }}
+        <div id="fecha_puclicacion">
+            <label>Fecha del Comentario:</label>
+            <input id="fechas" type="text" readonly name="fecha_puclicacion" value="{{fecha_puclicacion}}" required>
+        </div>
+        <div id="boton">
+            <button type="submit">Actualizar</button>
+        </div>
+    </form>
+    {{/each}}
     </div>
+
+</body>
+<script src="/js/fecha.js"></script>

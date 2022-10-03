@@ -48,7 +48,7 @@ videoActividadCtl.actualizar = async (req, res) => {
             actualizar.update(nuevoEnvio)
         })
     req.flash('success', 'Actualizado exitosamente')
-    res.redirect('/video/listar/' + id);
+    res.redirect('/videoActividad/listar/' + id);
 }
 videoActividadCtl.eliminar = async (req, res) => {
     const ids = req.params.id

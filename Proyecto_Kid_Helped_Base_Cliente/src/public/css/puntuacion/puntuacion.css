@@ -78,7 +78,7 @@ nav ul li a:hover::before {
 
 /*   parte body*/
 
-#img{
+.img{
     width: 200px;
     height: 200px;
     border-radius: 50%;

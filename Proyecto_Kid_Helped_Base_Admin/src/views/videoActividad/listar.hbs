@@ -1,20 +1,21 @@
 <link rel="stylesheet" href="/css/video/listar.css" />
 
-
 <!-- tablas-->
 <form action="/videoActividad/listar/{{user.id_actividad}}" method="get">
     <div id="container">
 
         <div class="row">
 
-
             {{#each lista}}
 
             <div id="id_video">
                 <p>{{url}}</p>
             </div>
-
             <br>
+            
+            <div id="titulo">
+                <p>{{titulo}}</p>
+            </div>
 
             <div id="descripcion">
                 <p>{{descripcion}}</p>
@@ -24,18 +25,18 @@
                 <p>{{tipo}}</p>
             </div>
 
-            <br>
+            <br />
             <div id="boton">
                 <a href="/videoActividad/editar/{{id_video}}"><button type="button">Editar</button></a>
             </div>
-            <br>
+            <br />
 
             <div id="eliminar">
                 <a href="/videoActividad/eliminar/{{id_video}}"><button type="button">Eliminar</button></a>
             </div>
 
-<br><br>
-            {{/each }}
+            <br /><br />
+            {{/each}}
         </div>
     </div>
 </form>

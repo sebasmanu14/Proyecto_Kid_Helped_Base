@@ -1,4 +1,4 @@
-/*
+
 * {
     margin: 0px;
     padding: 0px;
@@ -10,16 +10,23 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+img{
+    border-radius: 10%;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+}
+
 ul,
 ol {
     list-style: none;
 }
 
-.nav>li {
+#nav>li {
     float: left;
 }
 
-.nav li a {
+#nav li a {
     background-color: #000;
     color: #fff;
     text-decoration: none;
@@ -27,30 +34,30 @@ ol {
     display: block;
 }
 
-.nav li a:hover {
+#nav li a:hover {
     background-color: #434343;
 }
 
-.nav li ul {
+#nav li ul {
     display: none;
     position: absolute;
     min-width: 140px;
 }
 
-.nav li:hover>ul {
+#nav li:hover>ul {
     display: block;
 }
 
-.nav li ul li {
+#nav li ul li {
     position: relative;
 }
 
-.nav li ul li ul {
+#nav li ul li ul {
     right: -140px;
     top: 0px;
 }
 
-*/
+
 
 *,
 *:after,
@@ -67,166 +74,3 @@ body {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.header {
-    background: #41295a;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2F0743, #41295a);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #2F0743, #41295a);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    padding: 20px 60px;
-    color: #fff;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo {
-    font-size: 30px;
-    font-weight: 700;
-}
-
-.nav_ico {
-    display: inline-block;
-    position: relative;
-}
-
-.nav_ico label {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    cursor: pointer;
-}
-
-.nav_ico span {
-    display: block;
-    height: 4px;
-    width: 30px;
-    background: #fff;
-    margin: 4px 0
-}
-
-.nav-overlay {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 998;
-    background: transparent;
-    transition: all 0.3s ease-in-out;
-    pointer-events: none;
-}
-
-.nav-overlay.active {
-    background: rgba(0, 0, 0, 0.7);
-    pointer-events: auto;
-}
-
-#menu_trigger {
-    position: fixed;
-    opacity: 0;
-    pointer-events: none;
-    width: 0;
-    height: 0;
-    padding: 0;
-    margin: 0;
-}
-
-.close_icon {
-    color: #fff;
-    font-size: 60px;
-    position: relative;
-    position: absolute;
-    left: 20px;
-    top: 20px;
-    line-height: 0.7;
-    transform: rotate(45deg);
-}
-
-.close_icon input {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    margin: 0;
-    cursor: pointer;
-}
-
-.side_nav {
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 260px;
-    height: 100vh;
-    background: #41295a;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2F0743, #41295a);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #2F0743, #41295a);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    z-index: 1001;
-    padding-top: 100px;
-    transition: all 0.3s ease-in-out;
-    transform: translateX(100%);
-}
-
-#menu_trigger:checked+.side_nav {
-    transform: translateX(0%);
-}
-
-.side_nav ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.side_nav ul li {
-    margin: 0;
-}
-
-.side_nav ul li a {
-    display: block;
-    color: #fff;
-    font-size: 20px;
-    text-decoration: none;
-    padding: 12px 30px;
-    border-bottom: 1px solid;
-    transition: all 0.3s ease-in-out;
-}
-
-.side_nav ul li a:hover {
-    background: #53048f;
-    color: #fff;
-}
-
-.banner {
-    height: 100vh;
-    width: 100%;
-    background: url('../images/banner.png') center center no-repeat;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    padding: 60px 30px 0;
-    color: #fff
-}
-
-.banner h1 {
-    font-size: 90px;
-    text-shadow: 5px 1px 1px #000;
-    text-transform: uppercase;
-}
-
-.banner h1 span {
-    color: #12edff
-}

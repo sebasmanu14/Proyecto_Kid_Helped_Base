@@ -6,10 +6,9 @@ const comentario=(sequelize,type)=>{
             autoIncrement:true
         },
         comentario:type.STRING(3000),
-        fecha_publicacion:type.STRING,
-        
+        fecha_puclicacion:type.STRING,
 
-
+ 
         creacioncomentario: {
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),

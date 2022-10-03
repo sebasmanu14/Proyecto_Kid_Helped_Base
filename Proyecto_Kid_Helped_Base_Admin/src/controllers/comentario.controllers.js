@@ -9,10 +9,10 @@ comentarioCtl .mostrar=(req,res)=>{
 //mandar
 comentarioCtl .mandar=async(req,res)=>{
     const id =req.user.id_usuario
-    const {creacioncomentario,actualizarcomentario}=req.body
+    const {comentario,fecha_puclicacion}=req.body
     const nuevoEnvio={
-        creacioncomentario,
-        actualizarcomentario
+        comentario,
+        fecha_puclicacion
     }
     await orm.comentario.create(nuevoEnvio)
     req.flash('success','Guardado exitosamente')
@@ -34,10 +34,10 @@ comentarioCtl .traer=async(req,res)=>{
 comentarioCtl .actualizar=async(req,res)=>{
     const id =req.user.id_usuario
     const ids=req.params.id
-    const {creacioncomentario, actualizarcomentario}=req.body
+    const {comentario, fecha_puclicacion}=req.body
     const nuevoEnvio={
-        creacioncomentario,
-        actualizarcomentario
+        comentario,
+        fecha_puclicacion
        
     }
     await orm.comentario.findOne({where:{id_comentario:ids}})

@@ -1,40 +1,26 @@
-<link rel="stylesheet" href="/css/objetivo/listar.css" />
-
-
-<!-- tablas-->
+<link rel="stylesheet" href="/css/video/listar.css" />
 <form action="/respuestaComentario/listar/{{user.id_usuario}}" method="get">
     <div id="container">
 
-        <div class="row">
+        <div id="container">
+            <div class="row">
+                {{#each lista}}
+                <div id="respuesta">
+                    <p>{{respuesta}}</p>
+                </div>
+                <div id="boton">
+                    <a href="/respuestaComentario/editar/{{id_respuestaComentario}}"><button
+                            type="button">Editar</button></a>
+                </div>
 
+                <div id="eliminar">
+                    <a href="/respuestaComentario/eliminar/{{id_respuestaComentario}}"><button
+                            type="button">Eliminar</button></a>
+                </div>
 
-            {{#each lista}}
+                <br><br>
 
-            <div id="creacionrespuestaComentario">
-                <p>{{creacionrespuestaComentario}}</p>
+                {{/each }}
+
             </div>
-
-            <br>
-
-            <div id="actualizarrespuestaComentario">
-                <p>{{actualizarrespuestaComentario}}</p>
-            </div>
-
-
-            <br>
-            <div id="boton">
-                <a href="/respuestaComentario/editar/{{id_respuestaComentario}}"><button
-                        type="button">Editar</button></a>
-            </div>
-            <br>
-
-            <div id="eliminar">
-                <a href="/respuestaComentario/eliminar/{{id_respuestaComentario}}"><button
-                        type="button">Eliminar</button></a>
-            </div>
-
-
-            {{/each }}
-        </div>
-    </div>
 </form>

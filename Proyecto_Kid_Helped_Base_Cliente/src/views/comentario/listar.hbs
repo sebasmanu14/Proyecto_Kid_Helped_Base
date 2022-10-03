@@ -1,33 +1,35 @@
-<link rel="stylesheet" href="/css/comentario/listarcomentario.css"/>
+<link rel="stylesheet" href="/css/comentario/listarcomentario.css" />
 
-<!-- tablas-->
-<form action="/comentario/listar/{{user.id_cliente}}" method="get">
-    <div id="container">
+<body>
+    <!-- tablas-->
+    <form action="/comentario/listar/{{user.id_cliente}}" method="get">
+        <div id="container">
 
-        <div class="row">
-            <div id="background">
+            <div class="row">
+                <div id="background">
 
-            {{#each lista}}
-                <h3 style="text-align:center" >COMENTARIO</h3>
-                <div id="name" id="id_comentario">
-                   <div id="bloque">{{comentario}}</div> 
+                    {{#each lista}}
+                    <h3 style="text-align:center">COMENTARIO</h3>
+                    <div id="name" id="id_comentario">
+                        <div id="bloque">{{comentario}}</div>
+                    </div>
+
+                    <div id="codigo">
+                        <div id="bloque">{{fecha_publicacion}}</div>
+                    </div>
+
+                    <div id="boton">
+                        <a href="/comentario/editar/{{id_comentario}}"><button type="button">Editar</button></a>
+                    </div>
+
+                    <div id="eliminar">
+                        <a href="/comentario/eliminar/{{id_comentario}}"><button type="button">Eliminar</button></a>
+                    </div>
+
+                    <br><br>
+                    {{/each }}
                 </div>
-
-                <div id="codigo">
-                    <div id="bloque">{{fecha_publicacion}}</div> 
-                </div>
-
-                <div id="boton">
-                    <a href="/comentario/editar/{{id_comentario}}"><button type="button">Editar</button></a> 
-                </div>
-
-                <div id="eliminar">
-                <a href="/comentario/eliminar/{{id_comentario}}" ><button type="button">Eliminar</button></a> 
-                </div>
-
-   <br><br>         
-            {{/each }}
             </div>
         </div>
-    </div>
-</form>
+    </form>
+</body>

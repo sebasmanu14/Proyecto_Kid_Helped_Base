@@ -47,6 +47,7 @@ objetivoCtl.actualizar=async(req,res)=>{
     req.flash('success','Actualizado exitosamente')
     res.redirect('/objetivo/listar/'+id);
 }
+
 objetivoCtl.eliminar= async(req,res) =>{
    const ids= req.params.id
    const id =req.user.id_usuario

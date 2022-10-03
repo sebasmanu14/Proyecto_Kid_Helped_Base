@@ -1,22 +1,16 @@
 <link rel="stylesheet" href="/css/video/agregar.css">
-<div id="container__iniciar__session">
+<div id="container_iniciar_session">
 
     <form action="/respuestaComentario/agregar/{{user.id_usuario}}" method="post">
 
         <div id="titulo">
-            <h3>Respuesta del Comentario</h3>
+            <h3>Agregar Respuesta al Comentario </h3>
         </div>
 
-        <div id="creacionrespuestaComentario">
-            <label>Respuesta del comentario:</label>
-            <input type="text" name="creacionrespuestaComentario" required
-                placeholder="ingrese la respuesta del comentario" />
-        </div>
+        <div id="respuesta">
+            <label>Agrega respuesta al comentario:</label>
 
-        <div id="actualizarrespuestaComentario">
-            <label>Actualiza la respuesta del comentario:</label>
-            <input type="text" name="actualizarrespuestaComentario" required
-                placeholder="ingrese el nuevo comentario" />
+            <input type="text" name="respuesta" required>
         </div>
 
         <div id="boton">

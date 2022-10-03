@@ -6,14 +6,14 @@
         <div id="titulo">
             <h2>Editar comentario</h2>
         </div>
-        <div id="creacioncomentario">
+        <div id="comentario">
             <label>Edita el comentario:</label>
-            <input type="text" name="creacioncomentario" value="{{creacioncomentario}}" required>
+            <input type="text" name="comentario" value="{{comentario}}" required>
         </div>
 
-        <div id="actualizarcomentario">
-            <label>Verifica el nuevo comentario:</label>
-            <input type="text" name="actualizarcomentario" value="{{actualizarcomentario}}" required>
+        <div id="fecha_puclicacion">
+            <label>Fecha del Comentario:</label>
+            <input id="fechas" type="text"  readonly name="fecha_puclicacion" value="{{fecha_puclicacion}}" required>
         </div>
         <div id="boton">
             <button type="submit">Actualizar</button>
@@ -21,3 +21,5 @@
     </form>
     {{/each}}
 </div>
+
+<script src="/js/fecha.js"></script>

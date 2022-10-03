@@ -10,3 +10,4 @@ router.get('/editar/:id',traer)
 router.post('/editar/:id',actualizar)
 router.get('/eliminar/:id',eliminar)
 module.exports = router;
+  
